@@ -1,0 +1,397 @@
+{
+  "metadata": {
+    "version": "2.0.0",
+    "generator_name": "consumer_generate",
+    "description": "Theory-aligned v2 discrete schema for general consumer agent generation.",
+    "theory_notes": [
+      "Involvement is modeled as an upstream driver of information search and decision-process style.",
+      "Perceived risk remains an upstream driver of slower decision processes and greater reliance on trusted options.",
+      "Perceived behavioral control is introduced as a first-class TPB-aligned psychographic construct.",
+      "Novelty adoption uses the standard five diffusion-of-innovations adopter categories."
+    ],
+    "field_annotations": {
+      "decision_speed": {
+        "interpretation": "process_indicator",
+        "note": "Retained for compatibility in v2. Interpret as a downstream decision-process outcome rather than a stable core trait."
+      }
+    }
+  },
+  "schema": {
+    "age_group": ["18_24", "25_34", "35_44", "45_54", "55_64", "65_plus"],
+    "sex": ["female", "male"],
+    "income_group": ["low", "lower_middle", "upper_middle", "high"],
+    "education_group": ["secondary_or_less", "vocational", "undergraduate", "postgraduate"],
+    "occupation_group": ["student", "entry_level", "professional", "managerial", "retired", "homemaker", "unemployed"],
+    "household_stage": ["single", "couple_no_children", "family_with_children", "empty_nest", "shared_household"],
+    "region_group": ["metro", "suburban", "regional"],
+    "involvement_level": ["low", "medium", "high"],
+    "price_sensitivity": ["low", "medium", "high"],
+    "quality_orientation": ["low", "medium", "high"],
+    "risk_sensitivity": ["low", "medium", "high"],
+    "novelty_adoption": ["innovator", "early_adopter", "early_majority", "late_majority", "laggard"],
+    "social_influence_susceptibility": ["low", "medium", "high"],
+    "perceived_behavioral_control": ["low", "medium", "high"],
+    "purchase_planning_style": ["impulsive", "habitual", "limited_problem_solving", "extended_problem_solving"],
+    "decision_speed": ["fast", "deliberate", "slow"],
+    "brand_loyalty": ["low", "medium", "high"],
+    "promotion_sensitivity": ["low", "medium", "high"],
+    "information_search_depth": ["shallow", "moderate", "deep"],
+    "channel_preference": ["store_first", "omnichannel", "digital_first"],
+    "purchase_frequency_style": ["infrequent", "routine", "frequent"]
+  },
+  "field_groups": {
+    "age_group": "demographic",
+    "sex": "demographic",
+    "income_group": "demographic",
+    "education_group": "demographic",
+    "occupation_group": "demographic",
+    "household_stage": "demographic",
+    "region_group": "demographic",
+    "involvement_level": "behavioral_traits",
+    "price_sensitivity": "behavioral_traits",
+    "quality_orientation": "behavioral_traits",
+    "risk_sensitivity": "behavioral_traits",
+    "novelty_adoption": "behavioral_traits",
+    "social_influence_susceptibility": "behavioral_traits",
+    "perceived_behavioral_control": "behavioral_traits",
+    "purchase_planning_style": "behavioral_traits",
+    "decision_speed": "behavioral_traits",
+    "brand_loyalty": "consumption_preferences",
+    "promotion_sensitivity": "consumption_preferences",
+    "information_search_depth": "consumption_preferences",
+    "channel_preference": "consumption_preferences",
+    "purchase_frequency_style": "consumption_preferences"
+  },
+  "sampling_order": [
+    "age_group",
+    "sex",
+    "income_group",
+    "education_group",
+    "occupation_group",
+    "household_stage",
+    "region_group",
+    "involvement_level",
+    "quality_orientation",
+    "risk_sensitivity",
+    "promotion_sensitivity",
+    "purchase_frequency_style",
+    "perceived_behavioral_control",
+    "price_sensitivity",
+    "information_search_depth",
+    "decision_speed",
+    "purchase_planning_style",
+    "brand_loyalty",
+    "novelty_adoption",
+    "social_influence_susceptibility",
+    "channel_preference"
+  ],
+  "marginal_ratios": {
+    "age_group": {
+      "18_24": 0.14,
+      "25_34": 0.21,
+      "35_44": 0.18,
+      "45_54": 0.17,
+      "55_64": 0.15,
+      "65_plus": 0.15
+    },
+    "sex": {
+      "female": 0.51,
+      "male": 0.49
+    },
+    "income_group": {
+      "low": 0.28,
+      "lower_middle": 0.32,
+      "upper_middle": 0.25,
+      "high": 0.15
+    },
+    "education_group": {
+      "secondary_or_less": 0.27,
+      "vocational": 0.21,
+      "undergraduate": 0.35,
+      "postgraduate": 0.17
+    },
+    "occupation_group": {
+      "student": 0.1,
+      "entry_level": 0.18,
+      "professional": 0.29,
+      "managerial": 0.12,
+      "retired": 0.14,
+      "homemaker": 0.08,
+      "unemployed": 0.09
+    },
+    "household_stage": {
+      "single": 0.24,
+      "couple_no_children": 0.19,
+      "family_with_children": 0.31,
+      "empty_nest": 0.14,
+      "shared_household": 0.12
+    },
+    "region_group": {
+      "metro": 0.45,
+      "suburban": 0.35,
+      "regional": 0.2
+    },
+    "involvement_level": {
+      "low": 0.28,
+      "medium": 0.47,
+      "high": 0.25
+    },
+    "quality_orientation": {
+      "low": 0.16,
+      "medium": 0.49,
+      "high": 0.35
+    },
+    "risk_sensitivity": {
+      "low": 0.24,
+      "medium": 0.48,
+      "high": 0.28
+    },
+    "promotion_sensitivity": {
+      "low": 0.22,
+      "medium": 0.46,
+      "high": 0.32
+    },
+    "purchase_frequency_style": {
+      "infrequent": 0.24,
+      "routine": 0.51,
+      "frequent": 0.25
+    }
+  },
+  "conditional_ratios": {
+    "perceived_behavioral_control": {
+      "parent_field": "education_group",
+      "distributions": {
+        "secondary_or_less": {
+          "low": 0.41,
+          "medium": 0.42,
+          "high": 0.17
+        },
+        "vocational": {
+          "low": 0.27,
+          "medium": 0.5,
+          "high": 0.23
+        },
+        "undergraduate": {
+          "low": 0.18,
+          "medium": 0.48,
+          "high": 0.34
+        },
+        "postgraduate": {
+          "low": 0.11,
+          "medium": 0.43,
+          "high": 0.46
+        }
+      }
+    },
+    "price_sensitivity": {
+      "parent_field": "income_group",
+      "distributions": {
+        "low": {
+          "low": 0.08,
+          "medium": 0.34,
+          "high": 0.58
+        },
+        "lower_middle": {
+          "low": 0.14,
+          "medium": 0.49,
+          "high": 0.37
+        },
+        "upper_middle": {
+          "low": 0.27,
+          "medium": 0.51,
+          "high": 0.22
+        },
+        "high": {
+          "low": 0.44,
+          "medium": 0.4,
+          "high": 0.16
+        }
+      }
+    },
+    "information_search_depth": {
+      "parent_field": "involvement_level",
+      "distributions": {
+        "low": {
+          "shallow": 0.61,
+          "moderate": 0.29,
+          "deep": 0.1
+        },
+        "medium": {
+          "shallow": 0.19,
+          "moderate": 0.56,
+          "deep": 0.25
+        },
+        "high": {
+          "shallow": 0.08,
+          "moderate": 0.33,
+          "deep": 0.59
+        }
+      }
+    },
+    "decision_speed": {
+      "parent_field": "risk_sensitivity",
+      "distributions": {
+        "low": {
+          "fast": 0.43,
+          "deliberate": 0.4,
+          "slow": 0.17
+        },
+        "medium": {
+          "fast": 0.23,
+          "deliberate": 0.56,
+          "slow": 0.21
+        },
+        "high": {
+          "fast": 0.11,
+          "deliberate": 0.45,
+          "slow": 0.44
+        }
+      }
+    },
+    "purchase_planning_style": {
+      "parent_field": "involvement_level",
+      "distributions": {
+        "low": {
+          "impulsive": 0.31,
+          "habitual": 0.38,
+          "limited_problem_solving": 0.22,
+          "extended_problem_solving": 0.09
+        },
+        "medium": {
+          "impulsive": 0.12,
+          "habitual": 0.24,
+          "limited_problem_solving": 0.46,
+          "extended_problem_solving": 0.18
+        },
+        "high": {
+          "impulsive": 0.06,
+          "habitual": 0.14,
+          "limited_problem_solving": 0.31,
+          "extended_problem_solving": 0.49
+        }
+      }
+    },
+    "brand_loyalty": {
+      "parent_field": "risk_sensitivity",
+      "distributions": {
+        "low": {
+          "low": 0.34,
+          "medium": 0.44,
+          "high": 0.22
+        },
+        "medium": {
+          "low": 0.2,
+          "medium": 0.51,
+          "high": 0.29
+        },
+        "high": {
+          "low": 0.12,
+          "medium": 0.38,
+          "high": 0.5
+        }
+      }
+    },
+    "novelty_adoption": {
+      "parent_field": "age_group",
+      "distributions": {
+        "18_24": {
+          "innovator": 0.1,
+          "early_adopter": 0.22,
+          "early_majority": 0.34,
+          "late_majority": 0.22,
+          "laggard": 0.12
+        },
+        "25_34": {
+          "innovator": 0.08,
+          "early_adopter": 0.2,
+          "early_majority": 0.36,
+          "late_majority": 0.23,
+          "laggard": 0.13
+        },
+        "35_44": {
+          "innovator": 0.06,
+          "early_adopter": 0.16,
+          "early_majority": 0.37,
+          "late_majority": 0.26,
+          "laggard": 0.15
+        },
+        "45_54": {
+          "innovator": 0.04,
+          "early_adopter": 0.12,
+          "early_majority": 0.35,
+          "late_majority": 0.31,
+          "laggard": 0.18
+        },
+        "55_64": {
+          "innovator": 0.03,
+          "early_adopter": 0.09,
+          "early_majority": 0.3,
+          "late_majority": 0.35,
+          "laggard": 0.23
+        },
+        "65_plus": {
+          "innovator": 0.02,
+          "early_adopter": 0.06,
+          "early_majority": 0.24,
+          "late_majority": 0.36,
+          "laggard": 0.32
+        }
+      }
+    },
+    "social_influence_susceptibility": {
+      "parent_field": "age_group",
+      "distributions": {
+        "18_24": {
+          "low": 0.14,
+          "medium": 0.43,
+          "high": 0.43
+        },
+        "25_34": {
+          "low": 0.2,
+          "medium": 0.47,
+          "high": 0.33
+        },
+        "35_44": {
+          "low": 0.28,
+          "medium": 0.49,
+          "high": 0.23
+        },
+        "45_54": {
+          "low": 0.36,
+          "medium": 0.46,
+          "high": 0.18
+        },
+        "55_64": {
+          "low": 0.44,
+          "medium": 0.41,
+          "high": 0.15
+        },
+        "65_plus": {
+          "low": 0.5,
+          "medium": 0.37,
+          "high": 0.13
+        }
+      }
+    },
+    "channel_preference": {
+      "parent_field": "region_group",
+      "distributions": {
+        "metro": {
+          "store_first": 0.21,
+          "omnichannel": 0.41,
+          "digital_first": 0.38
+        },
+        "suburban": {
+          "store_first": 0.29,
+          "omnichannel": 0.46,
+          "digital_first": 0.25
+        },
+        "regional": {
+          "store_first": 0.44,
+          "omnichannel": 0.38,
+          "digital_first": 0.18
+        }
+      }
+    }
+  }
+}
