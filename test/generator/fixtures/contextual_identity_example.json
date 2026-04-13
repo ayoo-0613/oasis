@@ -1,0 +1,51 @@
+[
+  {
+    "agent_id": "enterprise_buyer_000001",
+    "role": "enterprise_buyer",
+    "organization_profile": {
+      "company_size": "mid_market",
+      "industry_vertical": "technology",
+      "ownership_type": "private",
+      "region_scope": "national",
+      "digital_maturity": "high",
+      "procurement_maturity": "standardized",
+      "annual_procurement_budget": "medium",
+      "buying_center_complexity": "cross_functional"
+    },
+    "buying_capabilities": {
+      "risk_tolerance": "medium",
+      "compliance_sensitivity": "medium",
+      "time_pressure": "high",
+      "internal_alignment_level": "medium",
+      "technical_absorptive_capacity": "high",
+      "evaluation_rigor": "structured",
+      "innovation_readiness": "selective",
+      "vendor_switching_willingness": "medium"
+    },
+    "procurement_preferences": {
+      "price_orientation": "medium",
+      "quality_orientation": "high",
+      "service_orientation": "medium",
+      "customization_need": "configurable",
+      "purchase_planning_style": "scheduled",
+      "information_search_depth": "moderate",
+      "decision_cycle_speed": "deliberate",
+      "vendor_preference": "preferred_list",
+      "contract_preference": "fixed_term"
+    },
+    "contextual_identity": {
+      "market_identity": "Regional SMB marketing agency",
+      "organization_type": "Services firm serving small businesses",
+      "industry_context": "Digital marketing and local business websites",
+      "primary_use_case": "Rapid landing page delivery for client campaigns",
+      "current_alternative": "Manual designer workflow and template builders",
+      "key_pain_points": [
+        "Slow first drafts",
+        "Repeated template customization",
+        "Simple deployment handoffs"
+      ],
+      "adoption_context": "Would pilot for lower-budget client projects",
+      "buying_relevance": "Matches a need for faster website production"
+    }
+  }
+]

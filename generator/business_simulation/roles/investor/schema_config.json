@@ -1,0 +1,352 @@
+{
+  "metadata": {
+    "version": "1.0.0",
+    "role": "investor",
+    "agent_id_prefix": "investor",
+    "generator_name": "investor_generate",
+    "description": "Config-driven discrete schema for structured investor generation.",
+    "output_groups": [
+      "fund_profile",
+      "investment_preferences",
+      "evaluation_style"
+    ],
+    "enrichment": {
+      "enabled_by_default": false,
+      "hook_name": "enrich_agent_profile",
+      "optional_output_fields": [
+        "behavioral_summary",
+        "persona_description",
+        "narrative_profile"
+      ]
+    }
+  },
+  "schema": {
+    "fund_type": ["venture_capital", "growth_equity", "private_equity", "strategic_corporate", "family_office"],
+    "stage_focus": ["pre_seed_seed", "series_a_b", "growth_late_stage", "buyout_maturity"],
+    "check_size_band": ["small", "medium", "large"],
+    "geography_focus": ["domestic", "regional", "global"],
+    "portfolio_concentration": ["diversified", "balanced", "concentrated"],
+    "decision_structure": ["partner_led", "committee_led", "founder_led"],
+    "liquidity_pressure": ["low", "medium", "high"],
+    "sector_specialization": ["generalist", "enterprise_software", "fintech", "healthcare", "industrial_climate"],
+    "market_size_preference": ["niche_tolerant", "mid_market", "large_tam_only"],
+    "team_risk_tolerance": ["low", "medium", "high"],
+    "valuation_sensitivity": ["low", "medium", "high"],
+    "traction_requirement": ["vision_weighted", "balanced", "metrics_driven"],
+    "conviction_threshold": ["low", "medium", "high"],
+    "diligence_depth": ["light", "standard", "deep"],
+    "governance_preference": ["light_touch", "board_active", "control_oriented"],
+    "follow_on_reserve_style": ["opportunistic", "planned", "pro_rata_strict"],
+    "speed_to_decision": ["fast", "deliberate", "slow"],
+    "theme_alignment_priority": ["low", "medium", "high"]
+  },
+  "field_groups": {
+    "fund_type": "fund_profile",
+    "stage_focus": "fund_profile",
+    "check_size_band": "fund_profile",
+    "geography_focus": "fund_profile",
+    "portfolio_concentration": "fund_profile",
+    "decision_structure": "fund_profile",
+    "liquidity_pressure": "fund_profile",
+    "sector_specialization": "fund_profile",
+    "market_size_preference": "investment_preferences",
+    "team_risk_tolerance": "investment_preferences",
+    "valuation_sensitivity": "investment_preferences",
+    "traction_requirement": "investment_preferences",
+    "conviction_threshold": "investment_preferences",
+    "diligence_depth": "evaluation_style",
+    "governance_preference": "evaluation_style",
+    "follow_on_reserve_style": "evaluation_style",
+    "speed_to_decision": "evaluation_style",
+    "theme_alignment_priority": "evaluation_style"
+  },
+  "sampling_order": [
+    "fund_type",
+    "stage_focus",
+    "check_size_band",
+    "geography_focus",
+    "portfolio_concentration",
+    "decision_structure",
+    "liquidity_pressure",
+    "sector_specialization",
+    "team_risk_tolerance",
+    "valuation_sensitivity",
+    "traction_requirement",
+    "diligence_depth",
+    "market_size_preference",
+    "conviction_threshold",
+    "governance_preference",
+    "follow_on_reserve_style",
+    "speed_to_decision",
+    "theme_alignment_priority"
+  ],
+  "marginal_ratios": {
+    "fund_type": {
+      "venture_capital": 0.32,
+      "growth_equity": 0.19,
+      "private_equity": 0.18,
+      "strategic_corporate": 0.15,
+      "family_office": 0.16
+    },
+    "stage_focus": {
+      "pre_seed_seed": 0.24,
+      "series_a_b": 0.31,
+      "growth_late_stage": 0.28,
+      "buyout_maturity": 0.17
+    },
+    "check_size_band": {
+      "small": 0.34,
+      "medium": 0.41,
+      "large": 0.25
+    },
+    "geography_focus": {
+      "domestic": 0.29,
+      "regional": 0.38,
+      "global": 0.33
+    },
+    "portfolio_concentration": {
+      "diversified": 0.29,
+      "balanced": 0.45,
+      "concentrated": 0.26
+    },
+    "decision_structure": {
+      "partner_led": 0.36,
+      "committee_led": 0.42,
+      "founder_led": 0.22
+    },
+    "liquidity_pressure": {
+      "low": 0.28,
+      "medium": 0.49,
+      "high": 0.23
+    },
+    "sector_specialization": {
+      "generalist": 0.31,
+      "enterprise_software": 0.22,
+      "fintech": 0.16,
+      "healthcare": 0.16,
+      "industrial_climate": 0.15
+    }
+  },
+  "conditional_ratios": {
+    "team_risk_tolerance": {
+      "parent_field": "stage_focus",
+      "distributions": {
+        "pre_seed_seed": {
+          "low": 0.11,
+          "medium": 0.34,
+          "high": 0.55
+        },
+        "series_a_b": {
+          "low": 0.17,
+          "medium": 0.49,
+          "high": 0.34
+        },
+        "growth_late_stage": {
+          "low": 0.31,
+          "medium": 0.49,
+          "high": 0.20
+        },
+        "buyout_maturity": {
+          "low": 0.54,
+          "medium": 0.33,
+          "high": 0.13
+        }
+      }
+    },
+    "valuation_sensitivity": {
+      "parent_field": "liquidity_pressure",
+      "distributions": {
+        "low": {
+          "low": 0.22,
+          "medium": 0.47,
+          "high": 0.31
+        },
+        "medium": {
+          "low": 0.13,
+          "medium": 0.45,
+          "high": 0.42
+        },
+        "high": {
+          "low": 0.07,
+          "medium": 0.31,
+          "high": 0.62
+        }
+      }
+    },
+    "traction_requirement": {
+      "parent_field": "stage_focus",
+      "distributions": {
+        "pre_seed_seed": {
+          "vision_weighted": 0.56,
+          "balanced": 0.33,
+          "metrics_driven": 0.11
+        },
+        "series_a_b": {
+          "vision_weighted": 0.19,
+          "balanced": 0.55,
+          "metrics_driven": 0.26
+        },
+        "growth_late_stage": {
+          "vision_weighted": 0.08,
+          "balanced": 0.34,
+          "metrics_driven": 0.58
+        },
+        "buyout_maturity": {
+          "vision_weighted": 0.04,
+          "balanced": 0.25,
+          "metrics_driven": 0.71
+        }
+      }
+    },
+    "diligence_depth": {
+      "parent_field": "decision_structure",
+      "distributions": {
+        "partner_led": {
+          "light": 0.31,
+          "standard": 0.49,
+          "deep": 0.20
+        },
+        "committee_led": {
+          "light": 0.08,
+          "standard": 0.39,
+          "deep": 0.53
+        },
+        "founder_led": {
+          "light": 0.46,
+          "standard": 0.39,
+          "deep": 0.15
+        }
+      }
+    },
+    "market_size_preference": {
+      "parent_field": "check_size_band",
+      "distributions": {
+        "small": {
+          "niche_tolerant": 0.39,
+          "mid_market": 0.43,
+          "large_tam_only": 0.18
+        },
+        "medium": {
+          "niche_tolerant": 0.19,
+          "mid_market": 0.51,
+          "large_tam_only": 0.30
+        },
+        "large": {
+          "niche_tolerant": 0.08,
+          "mid_market": 0.33,
+          "large_tam_only": 0.59
+        }
+      }
+    },
+    "conviction_threshold": {
+      "parent_field": "diligence_depth",
+      "distributions": {
+        "light": {
+          "low": 0.44,
+          "medium": 0.41,
+          "high": 0.15
+        },
+        "standard": {
+          "low": 0.19,
+          "medium": 0.56,
+          "high": 0.25
+        },
+        "deep": {
+          "low": 0.08,
+          "medium": 0.37,
+          "high": 0.55
+        }
+      }
+    },
+    "governance_preference": {
+      "parent_field": "check_size_band",
+      "distributions": {
+        "small": {
+          "light_touch": 0.53,
+          "board_active": 0.36,
+          "control_oriented": 0.11
+        },
+        "medium": {
+          "light_touch": 0.22,
+          "board_active": 0.56,
+          "control_oriented": 0.22
+        },
+        "large": {
+          "light_touch": 0.07,
+          "board_active": 0.38,
+          "control_oriented": 0.55
+        }
+      }
+    },
+    "follow_on_reserve_style": {
+      "parent_field": "portfolio_concentration",
+      "distributions": {
+        "diversified": {
+          "opportunistic": 0.48,
+          "planned": 0.39,
+          "pro_rata_strict": 0.13
+        },
+        "balanced": {
+          "opportunistic": 0.21,
+          "planned": 0.54,
+          "pro_rata_strict": 0.25
+        },
+        "concentrated": {
+          "opportunistic": 0.08,
+          "planned": 0.35,
+          "pro_rata_strict": 0.57
+        }
+      }
+    },
+    "speed_to_decision": {
+      "parent_field": "decision_structure",
+      "distributions": {
+        "partner_led": {
+          "fast": 0.43,
+          "deliberate": 0.42,
+          "slow": 0.15
+        },
+        "committee_led": {
+          "fast": 0.08,
+          "deliberate": 0.47,
+          "slow": 0.45
+        },
+        "founder_led": {
+          "fast": 0.59,
+          "deliberate": 0.29,
+          "slow": 0.12
+        }
+      }
+    },
+    "theme_alignment_priority": {
+      "parent_field": "fund_type",
+      "distributions": {
+        "venture_capital": {
+          "low": 0.17,
+          "medium": 0.46,
+          "high": 0.37
+        },
+        "growth_equity": {
+          "low": 0.22,
+          "medium": 0.53,
+          "high": 0.25
+        },
+        "private_equity": {
+          "low": 0.34,
+          "medium": 0.45,
+          "high": 0.21
+        },
+        "strategic_corporate": {
+          "low": 0.08,
+          "medium": 0.34,
+          "high": 0.58
+        },
+        "family_office": {
+          "low": 0.21,
+          "medium": 0.42,
+          "high": 0.37
+        }
+      }
+    }
+  }
+}

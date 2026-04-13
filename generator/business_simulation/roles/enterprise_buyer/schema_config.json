@@ -1,0 +1,409 @@
+{
+  "metadata": {
+    "version": "1.0.0",
+    "role": "enterprise_buyer",
+    "agent_id_prefix": "enterprise_buyer",
+    "generator_name": "enterprise_buyer_generate",
+    "description": "Config-driven discrete schema for structured enterprise buyer generation.",
+    "output_groups": [
+      "organization_profile",
+      "buying_capabilities",
+      "procurement_preferences"
+    ],
+    "enrichment": {
+      "enabled_by_default": false,
+      "hook_name": "enrich_agent_profile",
+      "optional_output_fields": [
+        "behavioral_summary",
+        "persona_description",
+        "narrative_profile"
+      ]
+    }
+  },
+  "schema": {
+    "company_size": ["smb", "mid_market", "large_enterprise"],
+    "industry_vertical": ["manufacturing", "financial_services", "healthcare", "technology", "retail_distribution", "public_sector"],
+    "ownership_type": ["private", "public", "state_owned", "nonprofit_cooperative"],
+    "region_scope": ["local", "multi_region", "national", "multinational"],
+    "digital_maturity": ["low", "medium", "high"],
+    "procurement_maturity": ["ad_hoc", "standardized", "strategic"],
+    "annual_procurement_budget": ["low", "medium", "high", "very_high"],
+    "buying_center_complexity": ["simple", "cross_functional", "committee_driven"],
+    "risk_tolerance": ["low", "medium", "high"],
+    "compliance_sensitivity": ["low", "medium", "high"],
+    "time_pressure": ["low", "medium", "high"],
+    "internal_alignment_level": ["low", "medium", "high"],
+    "technical_absorptive_capacity": ["low", "medium", "high"],
+    "evaluation_rigor": ["pragmatic", "structured", "exhaustive"],
+    "innovation_readiness": ["cautious", "selective", "progressive"],
+    "vendor_switching_willingness": ["low", "medium", "high"],
+    "price_orientation": ["low", "medium", "high"],
+    "quality_orientation": ["low", "medium", "high"],
+    "service_orientation": ["low", "medium", "high"],
+    "customization_need": ["standardized", "configurable", "bespoke"],
+    "purchase_planning_style": ["reactive", "scheduled", "roadmap_driven"],
+    "information_search_depth": ["narrow", "moderate", "extensive"],
+    "decision_cycle_speed": ["fast", "deliberate", "slow"],
+    "vendor_preference": ["open_market", "preferred_list", "incumbent_biased"],
+    "contract_preference": ["transactional", "fixed_term", "strategic_partnership"]
+  },
+  "field_groups": {
+    "company_size": "organization_profile",
+    "industry_vertical": "organization_profile",
+    "ownership_type": "organization_profile",
+    "region_scope": "organization_profile",
+    "digital_maturity": "organization_profile",
+    "procurement_maturity": "organization_profile",
+    "annual_procurement_budget": "organization_profile",
+    "buying_center_complexity": "organization_profile",
+    "risk_tolerance": "buying_capabilities",
+    "compliance_sensitivity": "buying_capabilities",
+    "time_pressure": "buying_capabilities",
+    "internal_alignment_level": "buying_capabilities",
+    "technical_absorptive_capacity": "buying_capabilities",
+    "evaluation_rigor": "buying_capabilities",
+    "innovation_readiness": "buying_capabilities",
+    "vendor_switching_willingness": "buying_capabilities",
+    "price_orientation": "procurement_preferences",
+    "quality_orientation": "procurement_preferences",
+    "service_orientation": "procurement_preferences",
+    "customization_need": "procurement_preferences",
+    "purchase_planning_style": "procurement_preferences",
+    "information_search_depth": "procurement_preferences",
+    "decision_cycle_speed": "procurement_preferences",
+    "vendor_preference": "procurement_preferences",
+    "contract_preference": "procurement_preferences"
+  },
+  "sampling_order": [
+    "company_size",
+    "industry_vertical",
+    "ownership_type",
+    "region_scope",
+    "digital_maturity",
+    "procurement_maturity",
+    "annual_procurement_budget",
+    "buying_center_complexity",
+    "risk_tolerance",
+    "compliance_sensitivity",
+    "time_pressure",
+    "internal_alignment_level",
+    "quality_orientation",
+    "service_orientation",
+    "technical_absorptive_capacity",
+    "evaluation_rigor",
+    "innovation_readiness",
+    "vendor_switching_willingness",
+    "price_orientation",
+    "purchase_planning_style",
+    "information_search_depth",
+    "decision_cycle_speed",
+    "customization_need",
+    "vendor_preference",
+    "contract_preference"
+  ],
+  "marginal_ratios": {
+    "company_size": {
+      "smb": 0.44,
+      "mid_market": 0.34,
+      "large_enterprise": 0.22
+    },
+    "industry_vertical": {
+      "manufacturing": 0.19,
+      "financial_services": 0.16,
+      "healthcare": 0.16,
+      "technology": 0.19,
+      "retail_distribution": 0.17,
+      "public_sector": 0.13
+    },
+    "ownership_type": {
+      "private": 0.52,
+      "public": 0.22,
+      "state_owned": 0.12,
+      "nonprofit_cooperative": 0.14
+    },
+    "region_scope": {
+      "local": 0.18,
+      "multi_region": 0.27,
+      "national": 0.35,
+      "multinational": 0.20
+    },
+    "digital_maturity": {
+      "low": 0.24,
+      "medium": 0.49,
+      "high": 0.27
+    },
+    "procurement_maturity": {
+      "ad_hoc": 0.23,
+      "standardized": 0.48,
+      "strategic": 0.29
+    },
+    "annual_procurement_budget": {
+      "low": 0.25,
+      "medium": 0.33,
+      "high": 0.25,
+      "very_high": 0.17
+    },
+    "buying_center_complexity": {
+      "simple": 0.24,
+      "cross_functional": 0.45,
+      "committee_driven": 0.31
+    },
+    "risk_tolerance": {
+      "low": 0.28,
+      "medium": 0.49,
+      "high": 0.23
+    },
+    "compliance_sensitivity": {
+      "low": 0.18,
+      "medium": 0.46,
+      "high": 0.36
+    },
+    "time_pressure": {
+      "low": 0.21,
+      "medium": 0.51,
+      "high": 0.28
+    },
+    "internal_alignment_level": {
+      "low": 0.19,
+      "medium": 0.52,
+      "high": 0.29
+    },
+    "quality_orientation": {
+      "low": 0.11,
+      "medium": 0.41,
+      "high": 0.48
+    },
+    "service_orientation": {
+      "low": 0.14,
+      "medium": 0.47,
+      "high": 0.39
+    }
+  },
+  "conditional_ratios": {
+    "technical_absorptive_capacity": {
+      "parent_field": "digital_maturity",
+      "distributions": {
+        "low": {
+          "low": 0.58,
+          "medium": 0.31,
+          "high": 0.11
+        },
+        "medium": {
+          "low": 0.22,
+          "medium": 0.54,
+          "high": 0.24
+        },
+        "high": {
+          "low": 0.08,
+          "medium": 0.34,
+          "high": 0.58
+        }
+      }
+    },
+    "evaluation_rigor": {
+      "parent_field": "procurement_maturity",
+      "distributions": {
+        "ad_hoc": {
+          "pragmatic": 0.54,
+          "structured": 0.34,
+          "exhaustive": 0.12
+        },
+        "standardized": {
+          "pragmatic": 0.18,
+          "structured": 0.57,
+          "exhaustive": 0.25
+        },
+        "strategic": {
+          "pragmatic": 0.07,
+          "structured": 0.34,
+          "exhaustive": 0.59
+        }
+      }
+    },
+    "innovation_readiness": {
+      "parent_field": "risk_tolerance",
+      "distributions": {
+        "low": {
+          "cautious": 0.61,
+          "selective": 0.31,
+          "progressive": 0.08
+        },
+        "medium": {
+          "cautious": 0.21,
+          "selective": 0.56,
+          "progressive": 0.23
+        },
+        "high": {
+          "cautious": 0.08,
+          "selective": 0.34,
+          "progressive": 0.58
+        }
+      }
+    },
+    "vendor_switching_willingness": {
+      "parent_field": "risk_tolerance",
+      "distributions": {
+        "low": {
+          "low": 0.62,
+          "medium": 0.29,
+          "high": 0.09
+        },
+        "medium": {
+          "low": 0.26,
+          "medium": 0.51,
+          "high": 0.23
+        },
+        "high": {
+          "low": 0.11,
+          "medium": 0.36,
+          "high": 0.53
+        }
+      }
+    },
+    "price_orientation": {
+      "parent_field": "annual_procurement_budget",
+      "distributions": {
+        "low": {
+          "low": 0.09,
+          "medium": 0.29,
+          "high": 0.62
+        },
+        "medium": {
+          "low": 0.14,
+          "medium": 0.47,
+          "high": 0.39
+        },
+        "high": {
+          "low": 0.24,
+          "medium": 0.49,
+          "high": 0.27
+        },
+        "very_high": {
+          "low": 0.39,
+          "medium": 0.41,
+          "high": 0.20
+        }
+      }
+    },
+    "purchase_planning_style": {
+      "parent_field": "procurement_maturity",
+      "distributions": {
+        "ad_hoc": {
+          "reactive": 0.59,
+          "scheduled": 0.29,
+          "roadmap_driven": 0.12
+        },
+        "standardized": {
+          "reactive": 0.19,
+          "scheduled": 0.57,
+          "roadmap_driven": 0.24
+        },
+        "strategic": {
+          "reactive": 0.07,
+          "scheduled": 0.29,
+          "roadmap_driven": 0.64
+        }
+      }
+    },
+    "information_search_depth": {
+      "parent_field": "evaluation_rigor",
+      "distributions": {
+        "pragmatic": {
+          "narrow": 0.56,
+          "moderate": 0.33,
+          "extensive": 0.11
+        },
+        "structured": {
+          "narrow": 0.16,
+          "moderate": 0.57,
+          "extensive": 0.27
+        },
+        "exhaustive": {
+          "narrow": 0.05,
+          "moderate": 0.29,
+          "extensive": 0.66
+        }
+      }
+    },
+    "decision_cycle_speed": {
+      "parent_field": "buying_center_complexity",
+      "distributions": {
+        "simple": {
+          "fast": 0.51,
+          "deliberate": 0.35,
+          "slow": 0.14
+        },
+        "cross_functional": {
+          "fast": 0.17,
+          "deliberate": 0.58,
+          "slow": 0.25
+        },
+        "committee_driven": {
+          "fast": 0.06,
+          "deliberate": 0.36,
+          "slow": 0.58
+        }
+      }
+    },
+    "customization_need": {
+      "parent_field": "technical_absorptive_capacity",
+      "distributions": {
+        "low": {
+          "standardized": 0.63,
+          "configurable": 0.29,
+          "bespoke": 0.08
+        },
+        "medium": {
+          "standardized": 0.24,
+          "configurable": 0.55,
+          "bespoke": 0.21
+        },
+        "high": {
+          "standardized": 0.10,
+          "configurable": 0.39,
+          "bespoke": 0.51
+        }
+      }
+    },
+    "vendor_preference": {
+      "parent_field": "compliance_sensitivity",
+      "distributions": {
+        "low": {
+          "open_market": 0.58,
+          "preferred_list": 0.28,
+          "incumbent_biased": 0.14
+        },
+        "medium": {
+          "open_market": 0.24,
+          "preferred_list": 0.55,
+          "incumbent_biased": 0.21
+        },
+        "high": {
+          "open_market": 0.09,
+          "preferred_list": 0.34,
+          "incumbent_biased": 0.57
+        }
+      }
+    },
+    "contract_preference": {
+      "parent_field": "risk_tolerance",
+      "distributions": {
+        "low": {
+          "transactional": 0.18,
+          "fixed_term": 0.53,
+          "strategic_partnership": 0.29
+        },
+        "medium": {
+          "transactional": 0.31,
+          "fixed_term": 0.44,
+          "strategic_partnership": 0.25
+        },
+        "high": {
+          "transactional": 0.46,
+          "fixed_term": 0.31,
+          "strategic_partnership": 0.23
+        }
+      }
+    }
+  }
+}

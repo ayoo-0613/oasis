@@ -1,0 +1,430 @@
+{
+  "metadata": {
+    "version": "1.0.0",
+    "role": "regulator",
+    "agent_id_prefix": "regulator",
+    "generator_name": "regulator_generate",
+    "description": "Config-driven discrete schema for structured regulator generation.",
+    "output_groups": [
+      "regulatory_profile",
+      "oversight_posture",
+      "review_priorities"
+    ],
+    "enrichment": {
+      "enabled_by_default": false,
+      "hook_name": "enrich_agent_profile",
+      "optional_output_fields": [
+        "behavioral_summary",
+        "persona_description",
+        "narrative_profile"
+      ]
+    }
+  },
+  "schema": {
+    "jurisdiction_level": ["local", "national", "supranational"],
+    "industry_scope": ["sector_agnostic", "financial_health_sensitive", "digital_data_sensitive", "industrial_environmental"],
+    "policy_stability": ["low", "medium", "high"],
+    "public_risk_focus": ["low", "medium", "high"],
+    "resource_capacity": ["low", "medium", "high"],
+    "rule_specificity": ["principles_based", "hybrid", "rules_based"],
+    "coordination_complexity": ["low", "medium", "high"],
+    "market_sensitivity": ["low", "medium", "high"],
+    "review_strictness": ["low", "medium", "high"],
+    "audit_frequency": ["low", "medium", "high"],
+    "approval_speed": ["fast", "deliberate", "slow"],
+    "evidence_burden": ["low", "medium", "high"],
+    "remediation_tolerance": ["high", "medium", "low"],
+    "escalation_propensity": ["low", "medium", "high"],
+    "interpretive_flexibility": ["low", "medium", "high"],
+    "innovation_tolerance": ["low", "medium", "high"],
+    "licensing_priority": ["low", "medium", "high"],
+    "consumer_protection_priority": ["low", "medium", "high"],
+    "competition_priority": ["low", "medium", "high"],
+    "data_governance_priority": ["low", "medium", "high"],
+    "environmental_priority": ["low", "medium", "high"],
+    "cross_border_sensitivity": ["low", "medium", "high"]
+  },
+  "field_groups": {
+    "jurisdiction_level": "regulatory_profile",
+    "industry_scope": "regulatory_profile",
+    "policy_stability": "regulatory_profile",
+    "public_risk_focus": "regulatory_profile",
+    "resource_capacity": "regulatory_profile",
+    "rule_specificity": "regulatory_profile",
+    "coordination_complexity": "regulatory_profile",
+    "market_sensitivity": "regulatory_profile",
+    "review_strictness": "oversight_posture",
+    "audit_frequency": "oversight_posture",
+    "approval_speed": "oversight_posture",
+    "evidence_burden": "oversight_posture",
+    "remediation_tolerance": "oversight_posture",
+    "escalation_propensity": "oversight_posture",
+    "interpretive_flexibility": "oversight_posture",
+    "innovation_tolerance": "oversight_posture",
+    "licensing_priority": "review_priorities",
+    "consumer_protection_priority": "review_priorities",
+    "competition_priority": "review_priorities",
+    "data_governance_priority": "review_priorities",
+    "environmental_priority": "review_priorities",
+    "cross_border_sensitivity": "review_priorities"
+  },
+  "sampling_order": [
+    "jurisdiction_level",
+    "industry_scope",
+    "policy_stability",
+    "public_risk_focus",
+    "resource_capacity",
+    "rule_specificity",
+    "coordination_complexity",
+    "market_sensitivity",
+    "review_strictness",
+    "audit_frequency",
+    "approval_speed",
+    "evidence_burden",
+    "remediation_tolerance",
+    "escalation_propensity",
+    "interpretive_flexibility",
+    "innovation_tolerance",
+    "licensing_priority",
+    "consumer_protection_priority",
+    "competition_priority",
+    "data_governance_priority",
+    "environmental_priority",
+    "cross_border_sensitivity"
+  ],
+  "marginal_ratios": {
+    "jurisdiction_level": {
+      "local": 0.18,
+      "national": 0.51,
+      "supranational": 0.31
+    },
+    "industry_scope": {
+      "sector_agnostic": 0.28,
+      "financial_health_sensitive": 0.23,
+      "digital_data_sensitive": 0.24,
+      "industrial_environmental": 0.25
+    },
+    "policy_stability": {
+      "low": 0.19,
+      "medium": 0.51,
+      "high": 0.30
+    },
+    "public_risk_focus": {
+      "low": 0.16,
+      "medium": 0.45,
+      "high": 0.39
+    },
+    "resource_capacity": {
+      "low": 0.22,
+      "medium": 0.50,
+      "high": 0.28
+    },
+    "rule_specificity": {
+      "principles_based": 0.23,
+      "hybrid": 0.45,
+      "rules_based": 0.32
+    },
+    "coordination_complexity": {
+      "low": 0.24,
+      "medium": 0.48,
+      "high": 0.28
+    },
+    "market_sensitivity": {
+      "low": 0.20,
+      "medium": 0.49,
+      "high": 0.31
+    }
+  },
+  "conditional_ratios": {
+    "review_strictness": {
+      "parent_field": "public_risk_focus",
+      "distributions": {
+        "low": {
+          "low": 0.55,
+          "medium": 0.34,
+          "high": 0.11
+        },
+        "medium": {
+          "low": 0.18,
+          "medium": 0.57,
+          "high": 0.25
+        },
+        "high": {
+          "low": 0.07,
+          "medium": 0.31,
+          "high": 0.62
+        }
+      }
+    },
+    "audit_frequency": {
+      "parent_field": "resource_capacity",
+      "distributions": {
+        "low": {
+          "low": 0.58,
+          "medium": 0.31,
+          "high": 0.11
+        },
+        "medium": {
+          "low": 0.22,
+          "medium": 0.55,
+          "high": 0.23
+        },
+        "high": {
+          "low": 0.08,
+          "medium": 0.35,
+          "high": 0.57
+        }
+      }
+    },
+    "approval_speed": {
+      "parent_field": "coordination_complexity",
+      "distributions": {
+        "low": {
+          "fast": 0.56,
+          "deliberate": 0.31,
+          "slow": 0.13
+        },
+        "medium": {
+          "fast": 0.21,
+          "deliberate": 0.57,
+          "slow": 0.22
+        },
+        "high": {
+          "fast": 0.07,
+          "deliberate": 0.37,
+          "slow": 0.56
+        }
+      }
+    },
+    "evidence_burden": {
+      "parent_field": "rule_specificity",
+      "distributions": {
+        "principles_based": {
+          "low": 0.39,
+          "medium": 0.44,
+          "high": 0.17
+        },
+        "hybrid": {
+          "low": 0.18,
+          "medium": 0.55,
+          "high": 0.27
+        },
+        "rules_based": {
+          "low": 0.07,
+          "medium": 0.35,
+          "high": 0.58
+        }
+      }
+    },
+    "remediation_tolerance": {
+      "parent_field": "review_strictness",
+      "distributions": {
+        "low": {
+          "high": 0.57,
+          "medium": 0.31,
+          "low": 0.12
+        },
+        "medium": {
+          "high": 0.22,
+          "medium": 0.56,
+          "low": 0.22
+        },
+        "high": {
+          "high": 0.08,
+          "medium": 0.36,
+          "low": 0.56
+        }
+      }
+    },
+    "escalation_propensity": {
+      "parent_field": "review_strictness",
+      "distributions": {
+        "low": {
+          "low": 0.59,
+          "medium": 0.30,
+          "high": 0.11
+        },
+        "medium": {
+          "low": 0.23,
+          "medium": 0.54,
+          "high": 0.23
+        },
+        "high": {
+          "low": 0.08,
+          "medium": 0.33,
+          "high": 0.59
+        }
+      }
+    },
+    "interpretive_flexibility": {
+      "parent_field": "policy_stability",
+      "distributions": {
+        "low": {
+          "low": 0.21,
+          "medium": 0.47,
+          "high": 0.32
+        },
+        "medium": {
+          "low": 0.27,
+          "medium": 0.52,
+          "high": 0.21
+        },
+        "high": {
+          "low": 0.39,
+          "medium": 0.43,
+          "high": 0.18
+        }
+      }
+    },
+    "innovation_tolerance": {
+      "parent_field": "policy_stability",
+      "distributions": {
+        "low": {
+          "low": 0.52,
+          "medium": 0.35,
+          "high": 0.13
+        },
+        "medium": {
+          "low": 0.24,
+          "medium": 0.54,
+          "high": 0.22
+        },
+        "high": {
+          "low": 0.11,
+          "medium": 0.37,
+          "high": 0.52
+        }
+      }
+    },
+    "licensing_priority": {
+      "parent_field": "jurisdiction_level",
+      "distributions": {
+        "local": {
+          "low": 0.33,
+          "medium": 0.46,
+          "high": 0.21
+        },
+        "national": {
+          "low": 0.18,
+          "medium": 0.47,
+          "high": 0.35
+        },
+        "supranational": {
+          "low": 0.10,
+          "medium": 0.34,
+          "high": 0.56
+        }
+      }
+    },
+    "consumer_protection_priority": {
+      "parent_field": "public_risk_focus",
+      "distributions": {
+        "low": {
+          "low": 0.56,
+          "medium": 0.32,
+          "high": 0.12
+        },
+        "medium": {
+          "low": 0.18,
+          "medium": 0.55,
+          "high": 0.27
+        },
+        "high": {
+          "low": 0.06,
+          "medium": 0.33,
+          "high": 0.61
+        }
+      }
+    },
+    "competition_priority": {
+      "parent_field": "market_sensitivity",
+      "distributions": {
+        "low": {
+          "low": 0.54,
+          "medium": 0.35,
+          "high": 0.11
+        },
+        "medium": {
+          "low": 0.19,
+          "medium": 0.57,
+          "high": 0.24
+        },
+        "high": {
+          "low": 0.08,
+          "medium": 0.35,
+          "high": 0.57
+        }
+      }
+    },
+    "data_governance_priority": {
+      "parent_field": "industry_scope",
+      "distributions": {
+        "sector_agnostic": {
+          "low": 0.34,
+          "medium": 0.44,
+          "high": 0.22
+        },
+        "financial_health_sensitive": {
+          "low": 0.11,
+          "medium": 0.42,
+          "high": 0.47
+        },
+        "digital_data_sensitive": {
+          "low": 0.05,
+          "medium": 0.27,
+          "high": 0.68
+        },
+        "industrial_environmental": {
+          "low": 0.22,
+          "medium": 0.50,
+          "high": 0.28
+        }
+      }
+    },
+    "environmental_priority": {
+      "parent_field": "industry_scope",
+      "distributions": {
+        "sector_agnostic": {
+          "low": 0.36,
+          "medium": 0.44,
+          "high": 0.20
+        },
+        "financial_health_sensitive": {
+          "low": 0.23,
+          "medium": 0.49,
+          "high": 0.28
+        },
+        "digital_data_sensitive": {
+          "low": 0.28,
+          "medium": 0.47,
+          "high": 0.25
+        },
+        "industrial_environmental": {
+          "low": 0.06,
+          "medium": 0.28,
+          "high": 0.66
+        }
+      }
+    },
+    "cross_border_sensitivity": {
+      "parent_field": "jurisdiction_level",
+      "distributions": {
+        "local": {
+          "low": 0.65,
+          "medium": 0.25,
+          "high": 0.10
+        },
+        "national": {
+          "low": 0.23,
+          "medium": 0.53,
+          "high": 0.24
+        },
+        "supranational": {
+          "low": 0.06,
+          "medium": 0.31,
+          "high": 0.63
+        }
+      }
+    }
+  }
+}

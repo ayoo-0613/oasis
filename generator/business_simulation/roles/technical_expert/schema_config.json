@@ -1,0 +1,421 @@
+{
+  "metadata": {
+    "version": "1.0.0",
+    "role": "technical_expert",
+    "agent_id_prefix": "technical_expert",
+    "generator_name": "technical_expert_generate",
+    "description": "Config-driven discrete schema for structured technical expert generation.",
+    "output_groups": [
+      "expertise_profile",
+      "technical_capabilities",
+      "assessment_style"
+    ],
+    "enrichment": {
+      "enabled_by_default": false,
+      "hook_name": "enrich_agent_profile",
+      "optional_output_fields": [
+        "behavioral_summary",
+        "persona_description",
+        "narrative_profile"
+      ]
+    }
+  },
+  "schema": {
+    "domain_specialization": ["application_platforms", "data_ai", "cybersecurity", "cloud_infrastructure", "embedded_systems"],
+    "architecture_orientation": ["modular", "platform_centric", "integration_heavy"],
+    "experience_band": ["senior", "principal", "distinguished"],
+    "system_scale_familiarity": ["team_scale", "business_critical", "internet_scale"],
+    "regulatory_exposure": ["low", "medium", "high"],
+    "reliability_bias": ["low", "medium", "high"],
+    "tooling_depth": ["practical", "advanced", "specialist"],
+    "innovation_bias": ["conservative", "balanced", "forward_leaning"],
+    "feasibility_threshold": ["low", "medium", "high"],
+    "architecture_risk_sensitivity": ["low", "medium", "high"],
+    "technical_debt_sensitivity": ["low", "medium", "high"],
+    "security_rigor": ["low", "medium", "high"],
+    "interoperability_focus": ["low", "medium", "high"],
+    "implementation_pragmatism": ["low", "medium", "high"],
+    "experimentation_willingness": ["low", "medium", "high"],
+    "evidence_standard": ["light", "standard", "rigorous"],
+    "review_depth": ["light", "standard", "deep"],
+    "time_to_opinion": ["fast", "deliberate", "slow"],
+    "documentation_expectation": ["low", "medium", "high"],
+    "build_vs_buy_bias": ["build", "balanced", "buy"],
+    "modernization_preference": ["incremental", "hybrid", "transformative"],
+    "failure_mode_focus": ["narrow", "balanced", "comprehensive"]
+  },
+  "field_groups": {
+    "domain_specialization": "expertise_profile",
+    "architecture_orientation": "expertise_profile",
+    "experience_band": "expertise_profile",
+    "system_scale_familiarity": "expertise_profile",
+    "regulatory_exposure": "expertise_profile",
+    "reliability_bias": "expertise_profile",
+    "tooling_depth": "expertise_profile",
+    "innovation_bias": "expertise_profile",
+    "feasibility_threshold": "technical_capabilities",
+    "architecture_risk_sensitivity": "technical_capabilities",
+    "technical_debt_sensitivity": "technical_capabilities",
+    "security_rigor": "technical_capabilities",
+    "interoperability_focus": "technical_capabilities",
+    "implementation_pragmatism": "technical_capabilities",
+    "experimentation_willingness": "technical_capabilities",
+    "evidence_standard": "technical_capabilities",
+    "review_depth": "assessment_style",
+    "time_to_opinion": "assessment_style",
+    "documentation_expectation": "assessment_style",
+    "build_vs_buy_bias": "assessment_style",
+    "modernization_preference": "assessment_style",
+    "failure_mode_focus": "assessment_style"
+  },
+  "sampling_order": [
+    "domain_specialization",
+    "architecture_orientation",
+    "experience_band",
+    "system_scale_familiarity",
+    "regulatory_exposure",
+    "reliability_bias",
+    "tooling_depth",
+    "innovation_bias",
+    "feasibility_threshold",
+    "architecture_risk_sensitivity",
+    "technical_debt_sensitivity",
+    "security_rigor",
+    "interoperability_focus",
+    "implementation_pragmatism",
+    "experimentation_willingness",
+    "evidence_standard",
+    "review_depth",
+    "time_to_opinion",
+    "documentation_expectation",
+    "build_vs_buy_bias",
+    "modernization_preference",
+    "failure_mode_focus"
+  ],
+  "marginal_ratios": {
+    "domain_specialization": {
+      "application_platforms": 0.24,
+      "data_ai": 0.22,
+      "cybersecurity": 0.18,
+      "cloud_infrastructure": 0.21,
+      "embedded_systems": 0.15
+    },
+    "architecture_orientation": {
+      "modular": 0.33,
+      "platform_centric": 0.36,
+      "integration_heavy": 0.31
+    },
+    "experience_band": {
+      "senior": 0.36,
+      "principal": 0.42,
+      "distinguished": 0.22
+    },
+    "system_scale_familiarity": {
+      "team_scale": 0.24,
+      "business_critical": 0.47,
+      "internet_scale": 0.29
+    },
+    "regulatory_exposure": {
+      "low": 0.25,
+      "medium": 0.47,
+      "high": 0.28
+    },
+    "reliability_bias": {
+      "low": 0.17,
+      "medium": 0.47,
+      "high": 0.36
+    },
+    "tooling_depth": {
+      "practical": 0.26,
+      "advanced": 0.49,
+      "specialist": 0.25
+    },
+    "innovation_bias": {
+      "conservative": 0.23,
+      "balanced": 0.49,
+      "forward_leaning": 0.28
+    }
+  },
+  "conditional_ratios": {
+    "feasibility_threshold": {
+      "parent_field": "system_scale_familiarity",
+      "distributions": {
+        "team_scale": {
+          "low": 0.47,
+          "medium": 0.39,
+          "high": 0.14
+        },
+        "business_critical": {
+          "low": 0.18,
+          "medium": 0.56,
+          "high": 0.26
+        },
+        "internet_scale": {
+          "low": 0.07,
+          "medium": 0.34,
+          "high": 0.59
+        }
+      }
+    },
+    "architecture_risk_sensitivity": {
+      "parent_field": "system_scale_familiarity",
+      "distributions": {
+        "team_scale": {
+          "low": 0.54,
+          "medium": 0.34,
+          "high": 0.12
+        },
+        "business_critical": {
+          "low": 0.20,
+          "medium": 0.55,
+          "high": 0.25
+        },
+        "internet_scale": {
+          "low": 0.08,
+          "medium": 0.33,
+          "high": 0.59
+        }
+      }
+    },
+    "technical_debt_sensitivity": {
+      "parent_field": "reliability_bias",
+      "distributions": {
+        "low": {
+          "low": 0.57,
+          "medium": 0.31,
+          "high": 0.12
+        },
+        "medium": {
+          "low": 0.19,
+          "medium": 0.56,
+          "high": 0.25
+        },
+        "high": {
+          "low": 0.07,
+          "medium": 0.31,
+          "high": 0.62
+        }
+      }
+    },
+    "security_rigor": {
+      "parent_field": "regulatory_exposure",
+      "distributions": {
+        "low": {
+          "low": 0.51,
+          "medium": 0.36,
+          "high": 0.13
+        },
+        "medium": {
+          "low": 0.18,
+          "medium": 0.57,
+          "high": 0.25
+        },
+        "high": {
+          "low": 0.06,
+          "medium": 0.31,
+          "high": 0.63
+        }
+      }
+    },
+    "interoperability_focus": {
+      "parent_field": "architecture_orientation",
+      "distributions": {
+        "modular": {
+          "low": 0.22,
+          "medium": 0.49,
+          "high": 0.29
+        },
+        "platform_centric": {
+          "low": 0.15,
+          "medium": 0.44,
+          "high": 0.41
+        },
+        "integration_heavy": {
+          "low": 0.05,
+          "medium": 0.28,
+          "high": 0.67
+        }
+      }
+    },
+    "implementation_pragmatism": {
+      "parent_field": "innovation_bias",
+      "distributions": {
+        "conservative": {
+          "low": 0.12,
+          "medium": 0.38,
+          "high": 0.50
+        },
+        "balanced": {
+          "low": 0.20,
+          "medium": 0.58,
+          "high": 0.22
+        },
+        "forward_leaning": {
+          "low": 0.39,
+          "medium": 0.45,
+          "high": 0.16
+        }
+      }
+    },
+    "experimentation_willingness": {
+      "parent_field": "innovation_bias",
+      "distributions": {
+        "conservative": {
+          "low": 0.61,
+          "medium": 0.28,
+          "high": 0.11
+        },
+        "balanced": {
+          "low": 0.21,
+          "medium": 0.56,
+          "high": 0.23
+        },
+        "forward_leaning": {
+          "low": 0.08,
+          "medium": 0.31,
+          "high": 0.61
+        }
+      }
+    },
+    "evidence_standard": {
+      "parent_field": "experience_band",
+      "distributions": {
+        "senior": {
+          "light": 0.41,
+          "standard": 0.44,
+          "rigorous": 0.15
+        },
+        "principal": {
+          "light": 0.17,
+          "standard": 0.56,
+          "rigorous": 0.27
+        },
+        "distinguished": {
+          "light": 0.06,
+          "standard": 0.33,
+          "rigorous": 0.61
+        }
+      }
+    },
+    "review_depth": {
+      "parent_field": "evidence_standard",
+      "distributions": {
+        "light": {
+          "light": 0.66,
+          "standard": 0.26,
+          "deep": 0.08
+        },
+        "standard": {
+          "light": 0.17,
+          "standard": 0.61,
+          "deep": 0.22
+        },
+        "rigorous": {
+          "light": 0.05,
+          "standard": 0.30,
+          "deep": 0.65
+        }
+      }
+    },
+    "time_to_opinion": {
+      "parent_field": "review_depth",
+      "distributions": {
+        "light": {
+          "fast": 0.61,
+          "deliberate": 0.28,
+          "slow": 0.11
+        },
+        "standard": {
+          "fast": 0.23,
+          "deliberate": 0.55,
+          "slow": 0.22
+        },
+        "deep": {
+          "fast": 0.07,
+          "deliberate": 0.36,
+          "slow": 0.57
+        }
+      }
+    },
+    "documentation_expectation": {
+      "parent_field": "regulatory_exposure",
+      "distributions": {
+        "low": {
+          "low": 0.58,
+          "medium": 0.30,
+          "high": 0.12
+        },
+        "medium": {
+          "low": 0.23,
+          "medium": 0.55,
+          "high": 0.22
+        },
+        "high": {
+          "low": 0.08,
+          "medium": 0.35,
+          "high": 0.57
+        }
+      }
+    },
+    "build_vs_buy_bias": {
+      "parent_field": "architecture_orientation",
+      "distributions": {
+        "modular": {
+          "build": 0.46,
+          "balanced": 0.42,
+          "buy": 0.12
+        },
+        "platform_centric": {
+          "build": 0.24,
+          "balanced": 0.55,
+          "buy": 0.21
+        },
+        "integration_heavy": {
+          "build": 0.12,
+          "balanced": 0.41,
+          "buy": 0.47
+        }
+      }
+    },
+    "modernization_preference": {
+      "parent_field": "innovation_bias",
+      "distributions": {
+        "conservative": {
+          "incremental": 0.63,
+          "hybrid": 0.28,
+          "transformative": 0.09
+        },
+        "balanced": {
+          "incremental": 0.23,
+          "hybrid": 0.56,
+          "transformative": 0.21
+        },
+        "forward_leaning": {
+          "incremental": 0.08,
+          "hybrid": 0.34,
+          "transformative": 0.58
+        }
+      }
+    },
+    "failure_mode_focus": {
+      "parent_field": "reliability_bias",
+      "distributions": {
+        "low": {
+          "narrow": 0.56,
+          "balanced": 0.33,
+          "comprehensive": 0.11
+        },
+        "medium": {
+          "narrow": 0.22,
+          "balanced": 0.55,
+          "comprehensive": 0.23
+        },
+        "high": {
+          "narrow": 0.07,
+          "balanced": 0.33,
+          "comprehensive": 0.60
+        }
+      }
+    }
+  }
+}

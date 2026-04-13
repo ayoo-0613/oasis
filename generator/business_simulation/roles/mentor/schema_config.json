@@ -1,0 +1,441 @@
+{
+  "metadata": {
+    "version": "1.0.0",
+    "role": "mentor",
+    "agent_id_prefix": "mentor",
+    "generator_name": "mentor_generate",
+    "description": "Config-driven discrete schema for structured mentor generation.",
+    "output_groups": [
+      "mentor_profile",
+      "advisory_style",
+      "strategic_focus"
+    ],
+    "enrichment": {
+      "enabled_by_default": false,
+      "hook_name": "enrich_agent_profile",
+      "optional_output_fields": [
+        "behavioral_summary",
+        "persona_description",
+        "narrative_profile"
+      ]
+    }
+  },
+  "schema": {
+    "career_stage": ["operator_veteran", "portfolio_advisor", "board_level", "serial_founder"],
+    "industry_lens": ["enterprise_b2b", "consumer_marketplace", "fintech_healthcare", "industrial_global"],
+    "company_building_experience": ["single_cycle", "multi_cycle", "scale_specialist"],
+    "network_reach": ["local", "regional", "global"],
+    "operator_vs_investor_background": ["operator_heavy", "balanced", "investor_heavy"],
+    "growth_orientation": ["steady", "balanced", "aggressive"],
+    "risk_outlook": ["defensive", "balanced", "bold"],
+    "international_exposure": ["low", "medium", "high"],
+    "candor_level": ["low", "medium", "high"],
+    "intervention_intensity": ["low", "medium", "high"],
+    "decision_framework_rigor": ["low", "medium", "high"],
+    "experimentation_bias": ["low", "medium", "high"],
+    "founder_autonomy_preference": ["low", "medium", "high"],
+    "pattern_matching_strength": ["low", "medium", "high"],
+    "feedback_speed": ["fast", "deliberate", "slow"],
+    "accountability_expectation": ["low", "medium", "high"],
+    "market_expansion_focus": ["low", "medium", "high"],
+    "org_design_focus": ["low", "medium", "high"],
+    "capital_efficiency_focus": ["low", "medium", "high"],
+    "partnership_leverage_focus": ["low", "medium", "high"],
+    "product_strategy_focus": ["low", "medium", "high"],
+    "timing_sensitivity": ["low", "medium", "high"]
+  },
+  "field_groups": {
+    "career_stage": "mentor_profile",
+    "industry_lens": "mentor_profile",
+    "company_building_experience": "mentor_profile",
+    "network_reach": "mentor_profile",
+    "operator_vs_investor_background": "mentor_profile",
+    "growth_orientation": "mentor_profile",
+    "risk_outlook": "mentor_profile",
+    "international_exposure": "mentor_profile",
+    "candor_level": "advisory_style",
+    "intervention_intensity": "advisory_style",
+    "decision_framework_rigor": "advisory_style",
+    "experimentation_bias": "advisory_style",
+    "founder_autonomy_preference": "advisory_style",
+    "pattern_matching_strength": "advisory_style",
+    "feedback_speed": "advisory_style",
+    "accountability_expectation": "advisory_style",
+    "market_expansion_focus": "strategic_focus",
+    "org_design_focus": "strategic_focus",
+    "capital_efficiency_focus": "strategic_focus",
+    "partnership_leverage_focus": "strategic_focus",
+    "product_strategy_focus": "strategic_focus",
+    "timing_sensitivity": "strategic_focus"
+  },
+  "sampling_order": [
+    "career_stage",
+    "industry_lens",
+    "company_building_experience",
+    "network_reach",
+    "operator_vs_investor_background",
+    "growth_orientation",
+    "risk_outlook",
+    "international_exposure",
+    "candor_level",
+    "intervention_intensity",
+    "decision_framework_rigor",
+    "experimentation_bias",
+    "founder_autonomy_preference",
+    "pattern_matching_strength",
+    "feedback_speed",
+    "accountability_expectation",
+    "market_expansion_focus",
+    "org_design_focus",
+    "capital_efficiency_focus",
+    "partnership_leverage_focus",
+    "product_strategy_focus",
+    "timing_sensitivity"
+  ],
+  "marginal_ratios": {
+    "career_stage": {
+      "operator_veteran": 0.31,
+      "portfolio_advisor": 0.24,
+      "board_level": 0.22,
+      "serial_founder": 0.23
+    },
+    "industry_lens": {
+      "enterprise_b2b": 0.31,
+      "consumer_marketplace": 0.22,
+      "fintech_healthcare": 0.22,
+      "industrial_global": 0.25
+    },
+    "company_building_experience": {
+      "single_cycle": 0.24,
+      "multi_cycle": 0.46,
+      "scale_specialist": 0.30
+    },
+    "network_reach": {
+      "local": 0.20,
+      "regional": 0.43,
+      "global": 0.37
+    },
+    "operator_vs_investor_background": {
+      "operator_heavy": 0.39,
+      "balanced": 0.37,
+      "investor_heavy": 0.24
+    },
+    "growth_orientation": {
+      "steady": 0.23,
+      "balanced": 0.49,
+      "aggressive": 0.28
+    },
+    "risk_outlook": {
+      "defensive": 0.26,
+      "balanced": 0.49,
+      "bold": 0.25
+    },
+    "international_exposure": {
+      "low": 0.22,
+      "medium": 0.46,
+      "high": 0.32
+    }
+  },
+  "conditional_ratios": {
+    "candor_level": {
+      "parent_field": "career_stage",
+      "distributions": {
+        "operator_veteran": {
+          "low": 0.09,
+          "medium": 0.36,
+          "high": 0.55
+        },
+        "portfolio_advisor": {
+          "low": 0.18,
+          "medium": 0.53,
+          "high": 0.29
+        },
+        "board_level": {
+          "low": 0.12,
+          "medium": 0.42,
+          "high": 0.46
+        },
+        "serial_founder": {
+          "low": 0.07,
+          "medium": 0.33,
+          "high": 0.60
+        }
+      }
+    },
+    "intervention_intensity": {
+      "parent_field": "company_building_experience",
+      "distributions": {
+        "single_cycle": {
+          "low": 0.39,
+          "medium": 0.44,
+          "high": 0.17
+        },
+        "multi_cycle": {
+          "low": 0.16,
+          "medium": 0.56,
+          "high": 0.28
+        },
+        "scale_specialist": {
+          "low": 0.08,
+          "medium": 0.38,
+          "high": 0.54
+        }
+      }
+    },
+    "decision_framework_rigor": {
+      "parent_field": "career_stage",
+      "distributions": {
+        "operator_veteran": {
+          "low": 0.18,
+          "medium": 0.55,
+          "high": 0.27
+        },
+        "portfolio_advisor": {
+          "low": 0.11,
+          "medium": 0.46,
+          "high": 0.43
+        },
+        "board_level": {
+          "low": 0.07,
+          "medium": 0.35,
+          "high": 0.58
+        },
+        "serial_founder": {
+          "low": 0.24,
+          "medium": 0.51,
+          "high": 0.25
+        }
+      }
+    },
+    "experimentation_bias": {
+      "parent_field": "growth_orientation",
+      "distributions": {
+        "steady": {
+          "low": 0.58,
+          "medium": 0.31,
+          "high": 0.11
+        },
+        "balanced": {
+          "low": 0.22,
+          "medium": 0.56,
+          "high": 0.22
+        },
+        "aggressive": {
+          "low": 0.08,
+          "medium": 0.31,
+          "high": 0.61
+        }
+      }
+    },
+    "founder_autonomy_preference": {
+      "parent_field": "operator_vs_investor_background",
+      "distributions": {
+        "operator_heavy": {
+          "low": 0.12,
+          "medium": 0.36,
+          "high": 0.52
+        },
+        "balanced": {
+          "low": 0.18,
+          "medium": 0.56,
+          "high": 0.26
+        },
+        "investor_heavy": {
+          "low": 0.47,
+          "medium": 0.39,
+          "high": 0.14
+        }
+      }
+    },
+    "pattern_matching_strength": {
+      "parent_field": "career_stage",
+      "distributions": {
+        "operator_veteran": {
+          "low": 0.16,
+          "medium": 0.51,
+          "high": 0.33
+        },
+        "portfolio_advisor": {
+          "low": 0.08,
+          "medium": 0.39,
+          "high": 0.53
+        },
+        "board_level": {
+          "low": 0.06,
+          "medium": 0.33,
+          "high": 0.61
+        },
+        "serial_founder": {
+          "low": 0.11,
+          "medium": 0.41,
+          "high": 0.48
+        }
+      }
+    },
+    "feedback_speed": {
+      "parent_field": "intervention_intensity",
+      "distributions": {
+        "low": {
+          "fast": 0.17,
+          "deliberate": 0.56,
+          "slow": 0.27
+        },
+        "medium": {
+          "fast": 0.33,
+          "deliberate": 0.50,
+          "slow": 0.17
+        },
+        "high": {
+          "fast": 0.60,
+          "deliberate": 0.29,
+          "slow": 0.11
+        }
+      }
+    },
+    "accountability_expectation": {
+      "parent_field": "operator_vs_investor_background",
+      "distributions": {
+        "operator_heavy": {
+          "low": 0.08,
+          "medium": 0.34,
+          "high": 0.58
+        },
+        "balanced": {
+          "low": 0.17,
+          "medium": 0.55,
+          "high": 0.28
+        },
+        "investor_heavy": {
+          "low": 0.33,
+          "medium": 0.48,
+          "high": 0.19
+        }
+      }
+    },
+    "market_expansion_focus": {
+      "parent_field": "international_exposure",
+      "distributions": {
+        "low": {
+          "low": 0.57,
+          "medium": 0.32,
+          "high": 0.11
+        },
+        "medium": {
+          "low": 0.21,
+          "medium": 0.56,
+          "high": 0.23
+        },
+        "high": {
+          "low": 0.08,
+          "medium": 0.34,
+          "high": 0.58
+        }
+      }
+    },
+    "org_design_focus": {
+      "parent_field": "company_building_experience",
+      "distributions": {
+        "single_cycle": {
+          "low": 0.39,
+          "medium": 0.44,
+          "high": 0.17
+        },
+        "multi_cycle": {
+          "low": 0.16,
+          "medium": 0.56,
+          "high": 0.28
+        },
+        "scale_specialist": {
+          "low": 0.06,
+          "medium": 0.31,
+          "high": 0.63
+        }
+      }
+    },
+    "capital_efficiency_focus": {
+      "parent_field": "risk_outlook",
+      "distributions": {
+        "defensive": {
+          "low": 0.06,
+          "medium": 0.30,
+          "high": 0.64
+        },
+        "balanced": {
+          "low": 0.18,
+          "medium": 0.56,
+          "high": 0.26
+        },
+        "bold": {
+          "low": 0.46,
+          "medium": 0.39,
+          "high": 0.15
+        }
+      }
+    },
+    "partnership_leverage_focus": {
+      "parent_field": "network_reach",
+      "distributions": {
+        "local": {
+          "low": 0.55,
+          "medium": 0.33,
+          "high": 0.12
+        },
+        "regional": {
+          "low": 0.21,
+          "medium": 0.56,
+          "high": 0.23
+        },
+        "global": {
+          "low": 0.07,
+          "medium": 0.31,
+          "high": 0.62
+        }
+      }
+    },
+    "product_strategy_focus": {
+      "parent_field": "industry_lens",
+      "distributions": {
+        "enterprise_b2b": {
+          "low": 0.15,
+          "medium": 0.46,
+          "high": 0.39
+        },
+        "consumer_marketplace": {
+          "low": 0.12,
+          "medium": 0.39,
+          "high": 0.49
+        },
+        "fintech_healthcare": {
+          "low": 0.17,
+          "medium": 0.52,
+          "high": 0.31
+        },
+        "industrial_global": {
+          "low": 0.25,
+          "medium": 0.51,
+          "high": 0.24
+        }
+      }
+    },
+    "timing_sensitivity": {
+      "parent_field": "risk_outlook",
+      "distributions": {
+        "defensive": {
+          "low": 0.10,
+          "medium": 0.35,
+          "high": 0.55
+        },
+        "balanced": {
+          "low": 0.19,
+          "medium": 0.55,
+          "high": 0.26
+        },
+        "bold": {
+          "low": 0.42,
+          "medium": 0.42,
+          "high": 0.16
+        }
+      }
+    }
+  }
+}

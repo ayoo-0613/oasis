@@ -1,0 +1,17 @@
+{
+  "provider": {
+    "provider_type": "local",
+    "model_name": "llama3",
+    "base_url": "http://localhost:11434",
+    "local_mode": "ollama",
+    "timeout_seconds": 60,
+    "max_retries": 1
+  },
+  "role_card": {
+    "enabled": true,
+    "strict_validation": true,
+    "on_error": "skip",
+    "max_list_items": 5,
+    "max_field_length": 180
+  }
+}

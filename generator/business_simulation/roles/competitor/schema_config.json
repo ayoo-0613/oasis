@@ -1,0 +1,376 @@
+{
+  "metadata": {
+    "version": "1.0.0",
+    "role": "competitor",
+    "agent_id_prefix": "competitor",
+    "generator_name": "competitor_generate",
+    "description": "Config-driven discrete schema for structured competitor generation.",
+    "output_groups": [
+      "firm_profile",
+      "strategic_capabilities",
+      "competitive_behavior"
+    ],
+    "enrichment": {
+      "enabled_by_default": false,
+      "hook_name": "enrich_agent_profile",
+      "optional_output_fields": [
+        "behavioral_summary",
+        "persona_description",
+        "narrative_profile"
+      ]
+    }
+  },
+  "schema": {
+    "firm_size": ["niche", "midsize", "large"],
+    "market_position": ["challenger", "strong_follower", "leader"],
+    "industry_focus": ["focused_vertical", "multi_vertical", "diversified_platform"],
+    "geographic_scope": ["local", "regional", "national", "global"],
+    "product_portfolio_breadth": ["narrow", "balanced", "broad"],
+    "brand_strength": ["emerging", "established", "dominant"],
+    "pricing_power": ["low", "medium", "high"],
+    "digital_capability": ["low", "medium", "high"],
+    "innovation_capacity": ["low", "medium", "high"],
+    "execution_speed": ["slow", "steady", "fast"],
+    "channel_strength": ["weak", "moderate", "strong"],
+    "customer_lock_in_strength": ["low", "medium", "high"],
+    "partnership_strength": ["low", "medium", "high"],
+    "operational_efficiency": ["low", "medium", "high"],
+    "risk_appetite": ["low", "medium", "high"],
+    "monitoring_intensity": ["low", "medium", "high"],
+    "primary_competitive_posture": ["defensive", "balanced", "disruptive"],
+    "response_aggressiveness": ["low", "medium", "high"],
+    "pricing_reaction_style": ["discount_defense", "selective_matching", "value_hold"],
+    "feature_reaction_style": ["lagging", "fast_follow", "proactive"],
+    "partnership_reaction_style": ["passive", "opportunistic", "alliance_push"],
+    "campaign_reaction_speed": ["slow", "measured", "rapid"],
+    "target_segment_focus": ["specialist", "core_segments", "full_market"],
+    "defense_strategy": ["account_retention", "moat_expansion", "category_shaping"]
+  },
+  "field_groups": {
+    "firm_size": "firm_profile",
+    "market_position": "firm_profile",
+    "industry_focus": "firm_profile",
+    "geographic_scope": "firm_profile",
+    "product_portfolio_breadth": "firm_profile",
+    "brand_strength": "firm_profile",
+    "pricing_power": "firm_profile",
+    "digital_capability": "firm_profile",
+    "innovation_capacity": "strategic_capabilities",
+    "execution_speed": "strategic_capabilities",
+    "channel_strength": "strategic_capabilities",
+    "customer_lock_in_strength": "strategic_capabilities",
+    "partnership_strength": "strategic_capabilities",
+    "operational_efficiency": "strategic_capabilities",
+    "risk_appetite": "strategic_capabilities",
+    "monitoring_intensity": "strategic_capabilities",
+    "primary_competitive_posture": "competitive_behavior",
+    "response_aggressiveness": "competitive_behavior",
+    "pricing_reaction_style": "competitive_behavior",
+    "feature_reaction_style": "competitive_behavior",
+    "partnership_reaction_style": "competitive_behavior",
+    "campaign_reaction_speed": "competitive_behavior",
+    "target_segment_focus": "competitive_behavior",
+    "defense_strategy": "competitive_behavior"
+  },
+  "sampling_order": [
+    "firm_size",
+    "market_position",
+    "industry_focus",
+    "geographic_scope",
+    "product_portfolio_breadth",
+    "brand_strength",
+    "pricing_power",
+    "digital_capability",
+    "channel_strength",
+    "customer_lock_in_strength",
+    "partnership_strength",
+    "operational_efficiency",
+    "risk_appetite",
+    "monitoring_intensity",
+    "innovation_capacity",
+    "execution_speed",
+    "primary_competitive_posture",
+    "response_aggressiveness",
+    "pricing_reaction_style",
+    "feature_reaction_style",
+    "partnership_reaction_style",
+    "campaign_reaction_speed",
+    "target_segment_focus",
+    "defense_strategy"
+  ],
+  "marginal_ratios": {
+    "firm_size": {
+      "niche": 0.32,
+      "midsize": 0.41,
+      "large": 0.27
+    },
+    "market_position": {
+      "challenger": 0.33,
+      "strong_follower": 0.42,
+      "leader": 0.25
+    },
+    "industry_focus": {
+      "focused_vertical": 0.36,
+      "multi_vertical": 0.41,
+      "diversified_platform": 0.23
+    },
+    "geographic_scope": {
+      "local": 0.15,
+      "regional": 0.28,
+      "national": 0.34,
+      "global": 0.23
+    },
+    "product_portfolio_breadth": {
+      "narrow": 0.29,
+      "balanced": 0.46,
+      "broad": 0.25
+    },
+    "brand_strength": {
+      "emerging": 0.28,
+      "established": 0.47,
+      "dominant": 0.25
+    },
+    "pricing_power": {
+      "low": 0.29,
+      "medium": 0.46,
+      "high": 0.25
+    },
+    "digital_capability": {
+      "low": 0.21,
+      "medium": 0.49,
+      "high": 0.30
+    },
+    "channel_strength": {
+      "weak": 0.18,
+      "moderate": 0.51,
+      "strong": 0.31
+    },
+    "customer_lock_in_strength": {
+      "low": 0.26,
+      "medium": 0.47,
+      "high": 0.27
+    },
+    "partnership_strength": {
+      "low": 0.22,
+      "medium": 0.49,
+      "high": 0.29
+    },
+    "operational_efficiency": {
+      "low": 0.19,
+      "medium": 0.53,
+      "high": 0.28
+    },
+    "risk_appetite": {
+      "low": 0.24,
+      "medium": 0.49,
+      "high": 0.27
+    },
+    "monitoring_intensity": {
+      "low": 0.17,
+      "medium": 0.47,
+      "high": 0.36
+    }
+  },
+  "conditional_ratios": {
+    "innovation_capacity": {
+      "parent_field": "digital_capability",
+      "distributions": {
+        "low": {
+          "low": 0.61,
+          "medium": 0.29,
+          "high": 0.10
+        },
+        "medium": {
+          "low": 0.21,
+          "medium": 0.57,
+          "high": 0.22
+        },
+        "high": {
+          "low": 0.07,
+          "medium": 0.31,
+          "high": 0.62
+        }
+      }
+    },
+    "execution_speed": {
+      "parent_field": "operational_efficiency",
+      "distributions": {
+        "low": {
+          "slow": 0.56,
+          "steady": 0.33,
+          "fast": 0.11
+        },
+        "medium": {
+          "slow": 0.19,
+          "steady": 0.57,
+          "fast": 0.24
+        },
+        "high": {
+          "slow": 0.06,
+          "steady": 0.31,
+          "fast": 0.63
+        }
+      }
+    },
+    "primary_competitive_posture": {
+      "parent_field": "market_position",
+      "distributions": {
+        "challenger": {
+          "defensive": 0.09,
+          "balanced": 0.34,
+          "disruptive": 0.57
+        },
+        "strong_follower": {
+          "defensive": 0.24,
+          "balanced": 0.58,
+          "disruptive": 0.18
+        },
+        "leader": {
+          "defensive": 0.42,
+          "balanced": 0.41,
+          "disruptive": 0.17
+        }
+      }
+    },
+    "response_aggressiveness": {
+      "parent_field": "risk_appetite",
+      "distributions": {
+        "low": {
+          "low": 0.58,
+          "medium": 0.32,
+          "high": 0.10
+        },
+        "medium": {
+          "low": 0.19,
+          "medium": 0.56,
+          "high": 0.25
+        },
+        "high": {
+          "low": 0.07,
+          "medium": 0.31,
+          "high": 0.62
+        }
+      }
+    },
+    "pricing_reaction_style": {
+      "parent_field": "pricing_power",
+      "distributions": {
+        "low": {
+          "discount_defense": 0.61,
+          "selective_matching": 0.29,
+          "value_hold": 0.10
+        },
+        "medium": {
+          "discount_defense": 0.29,
+          "selective_matching": 0.52,
+          "value_hold": 0.19
+        },
+        "high": {
+          "discount_defense": 0.10,
+          "selective_matching": 0.33,
+          "value_hold": 0.57
+        }
+      }
+    },
+    "feature_reaction_style": {
+      "parent_field": "innovation_capacity",
+      "distributions": {
+        "low": {
+          "lagging": 0.59,
+          "fast_follow": 0.31,
+          "proactive": 0.10
+        },
+        "medium": {
+          "lagging": 0.21,
+          "fast_follow": 0.57,
+          "proactive": 0.22
+        },
+        "high": {
+          "lagging": 0.07,
+          "fast_follow": 0.28,
+          "proactive": 0.65
+        }
+      }
+    },
+    "partnership_reaction_style": {
+      "parent_field": "partnership_strength",
+      "distributions": {
+        "low": {
+          "passive": 0.62,
+          "opportunistic": 0.29,
+          "alliance_push": 0.09
+        },
+        "medium": {
+          "passive": 0.23,
+          "opportunistic": 0.55,
+          "alliance_push": 0.22
+        },
+        "high": {
+          "passive": 0.08,
+          "opportunistic": 0.31,
+          "alliance_push": 0.61
+        }
+      }
+    },
+    "campaign_reaction_speed": {
+      "parent_field": "monitoring_intensity",
+      "distributions": {
+        "low": {
+          "slow": 0.58,
+          "measured": 0.31,
+          "rapid": 0.11
+        },
+        "medium": {
+          "slow": 0.18,
+          "measured": 0.57,
+          "rapid": 0.25
+        },
+        "high": {
+          "slow": 0.05,
+          "measured": 0.29,
+          "rapid": 0.66
+        }
+      }
+    },
+    "target_segment_focus": {
+      "parent_field": "product_portfolio_breadth",
+      "distributions": {
+        "narrow": {
+          "specialist": 0.68,
+          "core_segments": 0.25,
+          "full_market": 0.07
+        },
+        "balanced": {
+          "specialist": 0.19,
+          "core_segments": 0.61,
+          "full_market": 0.20
+        },
+        "broad": {
+          "specialist": 0.06,
+          "core_segments": 0.28,
+          "full_market": 0.66
+        }
+      }
+    },
+    "defense_strategy": {
+      "parent_field": "market_position",
+      "distributions": {
+        "challenger": {
+          "account_retention": 0.17,
+          "moat_expansion": 0.24,
+          "category_shaping": 0.59
+        },
+        "strong_follower": {
+          "account_retention": 0.41,
+          "moat_expansion": 0.38,
+          "category_shaping": 0.21
+        },
+        "leader": {
+          "account_retention": 0.28,
+          "moat_expansion": 0.52,
+          "category_shaping": 0.20
+        }
+      }
+    }
+  }
+}

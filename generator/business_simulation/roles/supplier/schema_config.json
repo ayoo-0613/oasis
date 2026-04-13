@@ -1,0 +1,399 @@
+{
+  "metadata": {
+    "version": "1.0.0",
+    "role": "supplier",
+    "agent_id_prefix": "supplier",
+    "generator_name": "supplier_generate",
+    "description": "Config-driven discrete schema for structured supplier generation.",
+    "output_groups": [
+      "supply_profile",
+      "commercial_capabilities",
+      "partnership_preferences"
+    ],
+    "enrichment": {
+      "enabled_by_default": false,
+      "hook_name": "enrich_agent_profile",
+      "optional_output_fields": [
+        "behavioral_summary",
+        "persona_description",
+        "narrative_profile"
+      ]
+    }
+  },
+  "schema": {
+    "supplier_type": ["raw_material", "component", "contract_manufacturer", "logistics_fulfillment", "specialized_service"],
+    "production_scale": ["small_batch", "mid_scale", "high_volume"],
+    "geographic_coverage": ["local", "regional", "multi_country", "global"],
+    "capacity_flexibility": ["low", "medium", "high"],
+    "quality_system_maturity": ["basic", "standardized", "advanced"],
+    "lead_time_reliability": ["low", "medium", "high"],
+    "cost_position": ["premium", "competitive", "low_cost"],
+    "bargaining_power": ["low", "medium", "high"],
+    "pricing_discipline": ["flexible", "balanced", "firm"],
+    "customization_capability": ["standard_only", "configurable", "engineered_to_order"],
+    "supply_resilience": ["fragile", "stable", "redundant"],
+    "compliance_readiness": ["basic", "qualified", "audit_ready"],
+    "service_level_commitment": ["basic", "managed", "mission_critical"],
+    "inventory_buffer_policy": ["lean", "balanced", "buffer_heavy"],
+    "negotiation_rigidity": ["low", "medium", "high"],
+    "contract_horizon_preference": ["spot", "mid_term", "long_term"],
+    "volume_commitment_requirement": ["low", "medium", "high"],
+    "payment_term_flexibility": ["low", "medium", "high"],
+    "exclusivity_willingness": ["low", "medium", "high"],
+    "partnership_selectivity": ["open", "screened", "highly_selective"],
+    "onboarding_speed": ["fast", "deliberate", "slow"]
+  },
+  "field_groups": {
+    "supplier_type": "supply_profile",
+    "production_scale": "supply_profile",
+    "geographic_coverage": "supply_profile",
+    "capacity_flexibility": "supply_profile",
+    "quality_system_maturity": "supply_profile",
+    "lead_time_reliability": "supply_profile",
+    "cost_position": "supply_profile",
+    "bargaining_power": "supply_profile",
+    "pricing_discipline": "commercial_capabilities",
+    "customization_capability": "commercial_capabilities",
+    "supply_resilience": "commercial_capabilities",
+    "compliance_readiness": "commercial_capabilities",
+    "service_level_commitment": "commercial_capabilities",
+    "inventory_buffer_policy": "commercial_capabilities",
+    "negotiation_rigidity": "commercial_capabilities",
+    "contract_horizon_preference": "partnership_preferences",
+    "volume_commitment_requirement": "partnership_preferences",
+    "payment_term_flexibility": "partnership_preferences",
+    "exclusivity_willingness": "partnership_preferences",
+    "partnership_selectivity": "partnership_preferences",
+    "onboarding_speed": "partnership_preferences"
+  },
+  "sampling_order": [
+    "supplier_type",
+    "production_scale",
+    "geographic_coverage",
+    "capacity_flexibility",
+    "quality_system_maturity",
+    "lead_time_reliability",
+    "cost_position",
+    "bargaining_power",
+    "pricing_discipline",
+    "customization_capability",
+    "supply_resilience",
+    "compliance_readiness",
+    "service_level_commitment",
+    "inventory_buffer_policy",
+    "negotiation_rigidity",
+    "contract_horizon_preference",
+    "volume_commitment_requirement",
+    "payment_term_flexibility",
+    "exclusivity_willingness",
+    "partnership_selectivity",
+    "onboarding_speed"
+  ],
+  "marginal_ratios": {
+    "supplier_type": {
+      "raw_material": 0.17,
+      "component": 0.22,
+      "contract_manufacturer": 0.24,
+      "logistics_fulfillment": 0.19,
+      "specialized_service": 0.18
+    },
+    "production_scale": {
+      "small_batch": 0.26,
+      "mid_scale": 0.45,
+      "high_volume": 0.29
+    },
+    "geographic_coverage": {
+      "local": 0.18,
+      "regional": 0.33,
+      "multi_country": 0.29,
+      "global": 0.20
+    },
+    "capacity_flexibility": {
+      "low": 0.23,
+      "medium": 0.49,
+      "high": 0.28
+    },
+    "quality_system_maturity": {
+      "basic": 0.21,
+      "standardized": 0.50,
+      "advanced": 0.29
+    },
+    "lead_time_reliability": {
+      "low": 0.18,
+      "medium": 0.51,
+      "high": 0.31
+    },
+    "cost_position": {
+      "premium": 0.22,
+      "competitive": 0.46,
+      "low_cost": 0.32
+    },
+    "bargaining_power": {
+      "low": 0.29,
+      "medium": 0.48,
+      "high": 0.23
+    }
+  },
+  "conditional_ratios": {
+    "pricing_discipline": {
+      "parent_field": "cost_position",
+      "distributions": {
+        "premium": {
+          "flexible": 0.10,
+          "balanced": 0.36,
+          "firm": 0.54
+        },
+        "competitive": {
+          "flexible": 0.22,
+          "balanced": 0.57,
+          "firm": 0.21
+        },
+        "low_cost": {
+          "flexible": 0.38,
+          "balanced": 0.46,
+          "firm": 0.16
+        }
+      }
+    },
+    "customization_capability": {
+      "parent_field": "production_scale",
+      "distributions": {
+        "small_batch": {
+          "standard_only": 0.18,
+          "configurable": 0.42,
+          "engineered_to_order": 0.40
+        },
+        "mid_scale": {
+          "standard_only": 0.27,
+          "configurable": 0.53,
+          "engineered_to_order": 0.20
+        },
+        "high_volume": {
+          "standard_only": 0.56,
+          "configurable": 0.34,
+          "engineered_to_order": 0.10
+        }
+      }
+    },
+    "supply_resilience": {
+      "parent_field": "capacity_flexibility",
+      "distributions": {
+        "low": {
+          "fragile": 0.58,
+          "stable": 0.32,
+          "redundant": 0.10
+        },
+        "medium": {
+          "fragile": 0.19,
+          "stable": 0.58,
+          "redundant": 0.23
+        },
+        "high": {
+          "fragile": 0.07,
+          "stable": 0.34,
+          "redundant": 0.59
+        }
+      }
+    },
+    "compliance_readiness": {
+      "parent_field": "quality_system_maturity",
+      "distributions": {
+        "basic": {
+          "basic": 0.63,
+          "qualified": 0.28,
+          "audit_ready": 0.09
+        },
+        "standardized": {
+          "basic": 0.14,
+          "qualified": 0.58,
+          "audit_ready": 0.28
+        },
+        "advanced": {
+          "basic": 0.05,
+          "qualified": 0.27,
+          "audit_ready": 0.68
+        }
+      }
+    },
+    "service_level_commitment": {
+      "parent_field": "lead_time_reliability",
+      "distributions": {
+        "low": {
+          "basic": 0.57,
+          "managed": 0.33,
+          "mission_critical": 0.10
+        },
+        "medium": {
+          "basic": 0.18,
+          "managed": 0.58,
+          "mission_critical": 0.24
+        },
+        "high": {
+          "basic": 0.06,
+          "managed": 0.29,
+          "mission_critical": 0.65
+        }
+      }
+    },
+    "inventory_buffer_policy": {
+      "parent_field": "capacity_flexibility",
+      "distributions": {
+        "low": {
+          "lean": 0.57,
+          "balanced": 0.31,
+          "buffer_heavy": 0.12
+        },
+        "medium": {
+          "lean": 0.24,
+          "balanced": 0.54,
+          "buffer_heavy": 0.22
+        },
+        "high": {
+          "lean": 0.10,
+          "balanced": 0.37,
+          "buffer_heavy": 0.53
+        }
+      }
+    },
+    "negotiation_rigidity": {
+      "parent_field": "bargaining_power",
+      "distributions": {
+        "low": {
+          "low": 0.53,
+          "medium": 0.36,
+          "high": 0.11
+        },
+        "medium": {
+          "low": 0.19,
+          "medium": 0.56,
+          "high": 0.25
+        },
+        "high": {
+          "low": 0.07,
+          "medium": 0.31,
+          "high": 0.62
+        }
+      }
+    },
+    "contract_horizon_preference": {
+      "parent_field": "production_scale",
+      "distributions": {
+        "small_batch": {
+          "spot": 0.43,
+          "mid_term": 0.39,
+          "long_term": 0.18
+        },
+        "mid_scale": {
+          "spot": 0.22,
+          "mid_term": 0.52,
+          "long_term": 0.26
+        },
+        "high_volume": {
+          "spot": 0.09,
+          "mid_term": 0.36,
+          "long_term": 0.55
+        }
+      }
+    },
+    "volume_commitment_requirement": {
+      "parent_field": "production_scale",
+      "distributions": {
+        "small_batch": {
+          "low": 0.58,
+          "medium": 0.31,
+          "high": 0.11
+        },
+        "mid_scale": {
+          "low": 0.23,
+          "medium": 0.55,
+          "high": 0.22
+        },
+        "high_volume": {
+          "low": 0.08,
+          "medium": 0.36,
+          "high": 0.56
+        }
+      }
+    },
+    "payment_term_flexibility": {
+      "parent_field": "bargaining_power",
+      "distributions": {
+        "low": {
+          "low": 0.18,
+          "medium": 0.37,
+          "high": 0.45
+        },
+        "medium": {
+          "low": 0.31,
+          "medium": 0.50,
+          "high": 0.19
+        },
+        "high": {
+          "low": 0.58,
+          "medium": 0.31,
+          "high": 0.11
+        }
+      }
+    },
+    "exclusivity_willingness": {
+      "parent_field": "capacity_flexibility",
+      "distributions": {
+        "low": {
+          "low": 0.56,
+          "medium": 0.33,
+          "high": 0.11
+        },
+        "medium": {
+          "low": 0.24,
+          "medium": 0.54,
+          "high": 0.22
+        },
+        "high": {
+          "low": 0.11,
+          "medium": 0.39,
+          "high": 0.50
+        }
+      }
+    },
+    "partnership_selectivity": {
+      "parent_field": "bargaining_power",
+      "distributions": {
+        "low": {
+          "open": 0.57,
+          "screened": 0.32,
+          "highly_selective": 0.11
+        },
+        "medium": {
+          "open": 0.22,
+          "screened": 0.57,
+          "highly_selective": 0.21
+        },
+        "high": {
+          "open": 0.08,
+          "screened": 0.34,
+          "highly_selective": 0.58
+        }
+      }
+    },
+    "onboarding_speed": {
+      "parent_field": "quality_system_maturity",
+      "distributions": {
+        "basic": {
+          "fast": 0.46,
+          "deliberate": 0.37,
+          "slow": 0.17
+        },
+        "standardized": {
+          "fast": 0.24,
+          "deliberate": 0.53,
+          "slow": 0.23
+        },
+        "advanced": {
+          "fast": 0.12,
+          "deliberate": 0.41,
+          "slow": 0.47
+        }
+      }
+    }
+  }
+}
