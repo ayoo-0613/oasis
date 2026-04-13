@@ -217,7 +217,20 @@ def run_generator_cli(*,
                 "--llm_model is required when --enable_contextual_identity "
                 "is set."
             )
-        agents = _enrich_agents_from_cli_args(agents, args)
+        try:
+            agents = _enrich_agents_from_cli_args(agents, args)
+        except Exception as exc:
+            parser.exit(
+                status=1,
+                message=(
+                    "error: contextual identity generation failed: "
+                    f"{exc}\n"
+                    "hint: ensure your LLM server is running and reachable, "
+                    "set --llm_base_url if it is not at the default URL, or "
+                    "use --contextual_on_error skip to keep static agents "
+                    "when enrichment fails.\n"
+                ),
+            )
 
     if args.output:
         save_agents(agents, args.output, pretty=args.pretty)

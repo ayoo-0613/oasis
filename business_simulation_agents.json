@@ -1,0 +1,343 @@
+{
+  "metadata": {
+    "generator": "business_simulation.generate_all_roles",
+    "roles": [
+      "consumer",
+      "enterprise_buyer",
+      "competitor",
+      "investor",
+      "supplier",
+      "regulator",
+      "technical_expert",
+      "mentor"
+    ],
+    "num_agents_per_role": 1,
+    "seed": 42,
+    "contextual_identity_enabled": true,
+    "contextual_identity_supported_roles": [
+      "competitor",
+      "enterprise_buyer",
+      "supplier",
+      "technical_expert"
+    ],
+    "llm_provider": "local",
+    "llm_model": "llama3.1:8b"
+  },
+  "agents": {
+    "consumer": [
+      {
+        "agent_id": "consumer_000001",
+        "role": "consumer",
+        "demographic": {
+          "age_group": "45_54",
+          "sex": "female",
+          "income_group": "low",
+          "education_group": "secondary_or_less",
+          "occupation_group": "retired",
+          "household_stage": "family_with_children",
+          "region_group": "regional"
+        },
+        "behavioral_traits": {
+          "involvement_level": "low",
+          "quality_orientation": "medium",
+          "risk_sensitivity": "low",
+          "perceived_behavioral_control": "low",
+          "price_sensitivity": "medium",
+          "decision_speed": "deliberate",
+          "purchase_planning_style": "impulsive",
+          "novelty_adoption": "late_majority",
+          "social_influence_susceptibility": "low"
+        },
+        "consumption_preferences": {
+          "promotion_sensitivity": "low",
+          "purchase_frequency_style": "routine",
+          "information_search_depth": "moderate",
+          "brand_loyalty": "medium",
+          "channel_preference": "omnichannel"
+        }
+      }
+    ],
+    "enterprise_buyer": [
+      {
+        "agent_id": "enterprise_buyer_000001",
+        "role": "enterprise_buyer",
+        "organization_profile": {
+          "company_size": "mid_market",
+          "industry_vertical": "manufacturing",
+          "ownership_type": "private",
+          "region_scope": "multi_region",
+          "digital_maturity": "high",
+          "procurement_maturity": "standardized",
+          "annual_procurement_budget": "very_high",
+          "buying_center_complexity": "simple"
+        },
+        "buying_capabilities": {
+          "risk_tolerance": "medium",
+          "compliance_sensitivity": "low",
+          "time_pressure": "medium",
+          "internal_alignment_level": "medium",
+          "technical_absorptive_capacity": "high",
+          "evaluation_rigor": "structured",
+          "innovation_readiness": "selective",
+          "vendor_switching_willingness": "medium"
+        },
+        "procurement_preferences": {
+          "quality_orientation": "low",
+          "service_orientation": "medium",
+          "price_orientation": "high",
+          "purchase_planning_style": "reactive",
+          "information_search_depth": "extensive",
+          "decision_cycle_speed": "deliberate",
+          "customization_need": "configurable",
+          "vendor_preference": "open_market",
+          "contract_preference": "strategic_partnership"
+        },
+        "contextual_identity": {
+          "market_identity": "Digital transformation enabler for SMBs",
+          "organization_type": "Private enterprise",
+          "industry_context": "Manufacturing companies in mid-market size range seeking efficiency gains",
+          "primary_use_case": "Configurable, AI-powered website design and maintenance",
+          "current_alternative": "In-house web design team and generic website builders",
+          "key_pain_points": [
+            "Time-consuming website updates",
+            "Limited customization options"
+          ],
+          "adoption_context": "B2B digital transformation",
+          "buying_relevance": "Aligns with our company's innovation roadmap"
+        }
+      }
+    ],
+    "competitor": [
+      {
+        "agent_id": "competitor_000001",
+        "role": "competitor",
+        "firm_profile": {
+          "firm_size": "midsize",
+          "market_position": "challenger",
+          "industry_focus": "focused_vertical",
+          "geographic_scope": "regional",
+          "product_portfolio_breadth": "balanced",
+          "brand_strength": "established",
+          "pricing_power": "high",
+          "digital_capability": "low"
+        },
+        "strategic_capabilities": {
+          "channel_strength": "moderate",
+          "customer_lock_in_strength": "low",
+          "partnership_strength": "low",
+          "operational_efficiency": "medium",
+          "risk_appetite": "low",
+          "monitoring_intensity": "medium",
+          "innovation_capacity": "medium",
+          "execution_speed": "steady"
+        },
+        "competitive_behavior": {
+          "primary_competitive_posture": "balanced",
+          "response_aggressiveness": "medium",
+          "pricing_reaction_style": "value_hold",
+          "feature_reaction_style": "lagging",
+          "partnership_reaction_style": "opportunistic",
+          "campaign_reaction_speed": "measured",
+          "target_segment_focus": "core_segments",
+          "defense_strategy": "account_retention"
+        },
+        "contextual_identity": {
+          "market_identity": "SmartWebsite - AI-Driven Web Design Solutions",
+          "competitor_type": "Established Online Service Provider",
+          "overlap_scope": "Existing website design platforms; AI-powered tools for SMBs",
+          "competing_offer": "AI-driven website design platform",
+          "positioning_style": "Balanced - Low-Cost, High-Quality Solutions",
+          "likely_target_segment": "Small to Medium-Sized Businesses (SMBs)",
+          "strategic_posture": "Challenger - Focus on Inexpensive AI-Powered Options",
+          "competitive_relevance": "AI-powered web design for SMBs"
+        }
+      }
+    ],
+    "investor": [
+      {
+        "agent_id": "investor_000001",
+        "role": "investor",
+        "fund_profile": {
+          "fund_type": "private_equity",
+          "stage_focus": "pre_seed_seed",
+          "check_size_band": "small",
+          "geography_focus": "domestic",
+          "portfolio_concentration": "balanced",
+          "decision_structure": "committee_led",
+          "liquidity_pressure": "high",
+          "sector_specialization": "generalist"
+        },
+        "investment_preferences": {
+          "team_risk_tolerance": "medium",
+          "valuation_sensitivity": "low",
+          "traction_requirement": "vision_weighted",
+          "market_size_preference": "niche_tolerant",
+          "conviction_threshold": "medium"
+        },
+        "evaluation_style": {
+          "diligence_depth": "deep",
+          "governance_preference": "board_active",
+          "follow_on_reserve_style": "planned",
+          "speed_to_decision": "deliberate",
+          "theme_alignment_priority": "medium"
+        }
+      }
+    ],
+    "supplier": [
+      {
+        "agent_id": "supplier_000001",
+        "role": "supplier",
+        "supply_profile": {
+          "supplier_type": "logistics_fulfillment",
+          "production_scale": "small_batch",
+          "geographic_coverage": "regional",
+          "capacity_flexibility": "low",
+          "quality_system_maturity": "advanced",
+          "lead_time_reliability": "medium",
+          "cost_position": "low_cost",
+          "bargaining_power": "low"
+        },
+        "commercial_capabilities": {
+          "pricing_discipline": "balanced",
+          "customization_capability": "standard_only",
+          "supply_resilience": "fragile",
+          "compliance_readiness": "audit_ready",
+          "service_level_commitment": "basic",
+          "inventory_buffer_policy": "lean",
+          "negotiation_rigidity": "medium"
+        },
+        "partnership_preferences": {
+          "contract_horizon_preference": "mid_term",
+          "volume_commitment_requirement": "low",
+          "payment_term_flexibility": "high",
+          "exclusivity_willingness": "medium",
+          "partnership_selectivity": "open",
+          "onboarding_speed": "slow"
+        },
+        "contextual_identity": {
+          "market_identity": "PixelPerfect.io",
+          "supplier_type": "Infrastructure Vendor",
+          "supplied_capability": "Web Design Templates; Responsive Layouts",
+          "dependency_role": "AI-Powered Website Design Platform",
+          "integration_scope": "Digital Experience Infrastructure",
+          "commercial_context": "SMB Digital Solutions",
+          "supply_relevance": "E-commerce Enablement; Digital Transformation Support"
+        }
+      }
+    ],
+    "regulator": [
+      {
+        "agent_id": "regulator_000001",
+        "role": "regulator",
+        "regulatory_profile": {
+          "jurisdiction_level": "national",
+          "industry_scope": "sector_agnostic",
+          "policy_stability": "medium",
+          "public_risk_focus": "medium",
+          "resource_capacity": "high",
+          "rule_specificity": "hybrid",
+          "coordination_complexity": "high",
+          "market_sensitivity": "low"
+        },
+        "oversight_posture": {
+          "review_strictness": "medium",
+          "audit_frequency": "low",
+          "approval_speed": "deliberate",
+          "evidence_burden": "medium",
+          "remediation_tolerance": "high",
+          "escalation_propensity": "low",
+          "interpretive_flexibility": "medium",
+          "innovation_tolerance": "medium"
+        },
+        "review_priorities": {
+          "licensing_priority": "medium",
+          "consumer_protection_priority": "medium",
+          "competition_priority": "medium",
+          "data_governance_priority": "low",
+          "environmental_priority": "high",
+          "cross_border_sensitivity": "medium"
+        }
+      }
+    ],
+    "technical_expert": [
+      {
+        "agent_id": "technical_expert_000001",
+        "role": "technical_expert",
+        "expertise_profile": {
+          "domain_specialization": "cybersecurity",
+          "architecture_orientation": "modular",
+          "experience_band": "senior",
+          "system_scale_familiarity": "team_scale",
+          "regulatory_exposure": "high",
+          "reliability_bias": "high",
+          "tooling_depth": "specialist",
+          "innovation_bias": "conservative"
+        },
+        "technical_capabilities": {
+          "feasibility_threshold": "low",
+          "architecture_risk_sensitivity": "low",
+          "technical_debt_sensitivity": "medium",
+          "security_rigor": "high",
+          "interoperability_focus": "low",
+          "implementation_pragmatism": "medium",
+          "experimentation_willingness": "medium",
+          "evidence_standard": "standard"
+        },
+        "assessment_style": {
+          "review_depth": "standard",
+          "time_to_opinion": "deliberate",
+          "documentation_expectation": "high",
+          "build_vs_buy_bias": "build",
+          "modernization_preference": "hybrid",
+          "failure_mode_focus": "comprehensive"
+        },
+        "contextual_identity": {
+          "market_identity": "Innovative SMB Solutions Expert",
+          "expertise_domain": "AI-powered Website Design",
+          "technical_scope": "Cybersecurity-focused AI Platform Development",
+          "evaluation_lens": "Small to Medium-Sized Business (SMB)",
+          "system_concern_focus": [
+            "Scalability",
+            "Interoperability"
+          ],
+          "likely_recommendation_style": "Strategic Partnership",
+          "technical_relevance": "Modular Architecture for AI-driven Website Design"
+        }
+      }
+    ],
+    "mentor": [
+      {
+        "agent_id": "mentor_000001",
+        "role": "mentor",
+        "mentor_profile": {
+          "career_stage": "board_level",
+          "industry_lens": "enterprise_b2b",
+          "company_building_experience": "multi_cycle",
+          "network_reach": "regional",
+          "operator_vs_investor_background": "balanced",
+          "growth_orientation": "balanced",
+          "risk_outlook": "bold",
+          "international_exposure": "low"
+        },
+        "advisory_style": {
+          "candor_level": "medium",
+          "intervention_intensity": "low",
+          "decision_framework_rigor": "medium",
+          "experimentation_bias": "medium",
+          "founder_autonomy_preference": "low",
+          "pattern_matching_strength": "medium",
+          "feedback_speed": "deliberate",
+          "accountability_expectation": "medium"
+        },
+        "strategic_focus": {
+          "market_expansion_focus": "low",
+          "org_design_focus": "medium",
+          "capital_efficiency_focus": "medium",
+          "partnership_leverage_focus": "low",
+          "product_strategy_focus": "high",
+          "timing_sensitivity": "medium"
+        }
+      }
+    ]
+  }
+}

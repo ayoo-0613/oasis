@@ -1,5 +1,5 @@
 from pathlib import Path
-from typing import Any
+from typing import Any, Optional
 
 import pytest
 
@@ -36,11 +36,11 @@ BUSINESS_IDEA = (
 class MockProvider(BaseLLMProvider):
     def __init__(self, payload: dict[str, Any]):
         self.payload = payload
-        self.calls: list[tuple[str, str | None]] = []
+        self.calls: list[tuple[str, Optional[str]]] = []
 
     def generate_json(self,
                       prompt: str,
-                      system_prompt: str | None = None) -> dict[str, Any]:
+                      system_prompt: Optional[str] = None) -> dict[str, Any]:
         self.calls.append((prompt, system_prompt))
         return self.payload
 
@@ -48,7 +48,7 @@ class MockProvider(BaseLLMProvider):
 class FailingProvider(BaseLLMProvider):
     def generate_json(self,
                       prompt: str,
-                      system_prompt: str | None = None) -> dict[str, Any]:
+                      system_prompt: Optional[str] = None) -> dict[str, Any]:
         raise RuntimeError("provider unavailable")
 
 
@@ -114,6 +114,32 @@ def test_validate_contextual_role_card_rejects_long_list():
             card,
             RoleCardConfig(max_list_items=5),
         )
+
+
+def test_validate_contextual_role_card_coerces_string_list_to_string_field():
+    card = {
+        "market_identity": "Website builder incumbent",
+        "competitor_type": "No-code website platform",
+        "overlap_scope": ["SMB landing pages", "Template editing"],
+        "competing_offer": "Drag-and-drop website builder",
+        "positioning_style": "Ease-of-use and template breadth",
+        "likely_target_segment": "Small business owners",
+        "strategic_posture": "Defend existing SMB workflows",
+        "competitive_relevance": "Competes for simple website creation budgets",
+    }
+
+    validated = validate_contextual_role_card("competitor", card)
+
+    assert validated["overlap_scope"] == "SMB landing pages; Template editing"
+
+
+def test_validate_contextual_role_card_coerces_string_to_string_list_field():
+    card = _enterprise_buyer_card()
+    card["key_pain_points"] = "Slow first drafts"
+
+    validated = validate_contextual_role_card("enterprise_buyer", card)
+
+    assert validated["key_pain_points"] == ["Slow first drafts"]
 
 
 def test_enrich_agents_with_contextual_identity_enriches_supported_roles_only():

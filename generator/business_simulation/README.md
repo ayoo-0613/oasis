@@ -112,3 +112,25 @@ cards with a warning.
 An example JSON config is available at
 `generator/business_simulation/enrichment/contextual_identity_config.example.json`.
 YAML is not supported because this package currently avoids adding dependencies.
+
+## Generate All Roles
+
+To generate all 8 roles into one JSON file, use the all-role test runner:
+
+```bash
+python -m generator.business_simulation.generate_all_roles \
+  --num_agents_per_role 1 \
+  --seed 42 \
+  --business_idea "AI-powered website design platform for SMBs." \
+  --enable_contextual_identity \
+  --llm_provider local \
+  --llm_local_mode ollama \
+  --llm_model llama3.1:8b \
+  --output business_simulation_agents.json \
+  --pretty
+```
+
+This generates all static roles and enriches only the supported contextual
+identity roles: `enterprise_buyer`, `competitor`, `supplier`, and
+`technical_expert`. See `generator/business_simulation/ALL_ROLES_TEST.md` for a
+short runnable test document.

@@ -61,6 +61,7 @@ def validate_contextual_role_card(
                 value=value,
                 field_name=field_name,
                 max_field_length=role_card_config.max_field_length,
+                max_items=role_card_config.max_list_items,
             )
             continue
         if field_type == "list[str]":
@@ -81,7 +82,16 @@ def validate_contextual_role_card(
 def _validate_short_string(*,
                            value: Any,
                            field_name: str,
-                           max_field_length: int) -> str:
+                           max_field_length: int,
+                           max_items: int) -> str:
+    if isinstance(value, list):
+        string_items = _validate_short_string_list(
+            value=value,
+            field_name=field_name,
+            max_items=max_items,
+            max_field_length=max_field_length,
+        )
+        value = "; ".join(string_items)
     if not isinstance(value, str):
         raise RoleCardValidationError(
             f"Contextual role card field '{field_name}' must be a string."
@@ -104,6 +114,8 @@ def _validate_short_string_list(*,
                                 field_name: str,
                                 max_items: int,
                                 max_field_length: int) -> list[str]:
+    if isinstance(value, str):
+        value = [value]
     if not isinstance(value, list):
         raise RoleCardValidationError(
             f"Contextual role card field '{field_name}' must be a list."
@@ -122,6 +134,7 @@ def _validate_short_string_list(*,
             value=item,
             field_name=f"{field_name}[]",
             max_field_length=max_field_length,
+            max_items=max_items,
         )
         for item in value
     ]
