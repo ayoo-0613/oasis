@@ -1,0 +1,127 @@
+{
+  "metadata": {
+    "role": "regulator",
+    "_comment": "Deterministic theory-grounded regulator archetypes.",
+    "description": "Canonical regulatory posture profiles for deterministic business simulation runs.",
+    "reference_notes": [
+      "Ayres, I., & Braithwaite, J. (1992). Responsive Regulation.",
+      "Baldwin, R., Cave, M., & Lodge, M. (2012). Understanding Regulation.",
+      "Hood, C., Rothstein, H., & Baldwin, R. (2001). The Government of Risk."
+    ]
+  },
+  "archetypes": [
+    {
+      "archetype_id": "innovation_friendly_regulator",
+      "display_name": "Innovation-Friendly Regulator",
+      "summary": "A principles-based regulator balancing consumer safeguards with innovation tolerance.",
+      "theory_tags": [
+        "responsive_regulation",
+        "adaptive_governance",
+        "innovation_tolerance"
+      ],
+      "reference_notes": [
+        "Ayres, I., & Braithwaite, J. (1992). Responsive Regulation.",
+        "Baldwin, R., Cave, M., & Lodge, M. (2012). Understanding Regulation."
+      ],
+      "fields": {
+        "jurisdiction_level": "national",
+        "industry_scope": "digital_data_sensitive",
+        "policy_stability": "high",
+        "public_risk_focus": "medium",
+        "resource_capacity": "medium",
+        "rule_specificity": "principles_based",
+        "coordination_complexity": "medium",
+        "market_sensitivity": "high",
+        "review_strictness": "medium",
+        "audit_frequency": "medium",
+        "approval_speed": "deliberate",
+        "evidence_burden": "medium",
+        "remediation_tolerance": "high",
+        "escalation_propensity": "low",
+        "interpretive_flexibility": "high",
+        "innovation_tolerance": "high",
+        "licensing_priority": "medium",
+        "consumer_protection_priority": "medium",
+        "competition_priority": "high",
+        "data_governance_priority": "high",
+        "environmental_priority": "low",
+        "cross_border_sensitivity": "medium"
+      }
+    },
+    {
+      "archetype_id": "risk_averse_strict_regulator",
+      "display_name": "Risk-Averse Strict Regulator",
+      "summary": "A rules-based regulator with high evidence burden and enforcement propensity.",
+      "theory_tags": [
+        "risk_based_regulation",
+        "strict_oversight",
+        "high_enforcement_posture"
+      ],
+      "reference_notes": [
+        "Hood, C., Rothstein, H., & Baldwin, R. (2001). The Government of Risk.",
+        "Baldwin, Cave & Lodge (2012)"
+      ],
+      "fields": {
+        "jurisdiction_level": "national",
+        "industry_scope": "financial_health_sensitive",
+        "policy_stability": "high",
+        "public_risk_focus": "high",
+        "resource_capacity": "high",
+        "rule_specificity": "rules_based",
+        "coordination_complexity": "medium",
+        "market_sensitivity": "medium",
+        "review_strictness": "high",
+        "audit_frequency": "high",
+        "approval_speed": "slow",
+        "evidence_burden": "high",
+        "remediation_tolerance": "low",
+        "escalation_propensity": "high",
+        "interpretive_flexibility": "low",
+        "innovation_tolerance": "low",
+        "licensing_priority": "high",
+        "consumer_protection_priority": "high",
+        "competition_priority": "medium",
+        "data_governance_priority": "high",
+        "environmental_priority": "low",
+        "cross_border_sensitivity": "medium"
+      }
+    },
+    {
+      "archetype_id": "cross_border_governance_regulator",
+      "display_name": "Cross-Border Governance Regulator",
+      "summary": "A supranational regulator focused on coordination, data governance, and market effects.",
+      "theory_tags": [
+        "multi_level_governance",
+        "cross_border_regulation",
+        "data_and_market_coordination"
+      ],
+      "reference_notes": [
+        "Baldwin, Cave & Lodge (2012)"
+      ],
+      "fields": {
+        "jurisdiction_level": "supranational",
+        "industry_scope": "digital_data_sensitive",
+        "policy_stability": "medium",
+        "public_risk_focus": "medium",
+        "resource_capacity": "medium",
+        "rule_specificity": "hybrid",
+        "coordination_complexity": "high",
+        "market_sensitivity": "high",
+        "review_strictness": "high",
+        "audit_frequency": "medium",
+        "approval_speed": "slow",
+        "evidence_burden": "high",
+        "remediation_tolerance": "medium",
+        "escalation_propensity": "medium",
+        "interpretive_flexibility": "medium",
+        "innovation_tolerance": "medium",
+        "licensing_priority": "high",
+        "consumer_protection_priority": "high",
+        "competition_priority": "high",
+        "data_governance_priority": "high",
+        "environmental_priority": "low",
+        "cross_border_sensitivity": "high"
+      }
+    }
+  ]
+}

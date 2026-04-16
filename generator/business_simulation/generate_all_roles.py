@@ -2,15 +2,16 @@
 
 Example:
     python -m generator.business_simulation.generate_all_roles \
-      --num_agents_per_role 1 \
-      --seed 42 \
-      --business_idea "AI-powered website design platform for SMBs." \
-      --enable_contextual_identity \
-      --llm_provider local \
-      --llm_local_mode ollama \
-      --llm_model llama3.1:8b \
-      --output business_simulation_agents.json \
-      --pretty
+    --num_agents_per_role 1 \
+    --seed 42 \
+    --business_idea "AI-powered website design platform for SMBs." \
+    --enable_contextual_identity \
+    --llm_provider local \
+    --llm_local_mode ollama \
+    --llm_model llama3.1:8b \
+    --output business_simulation_agents.json \
+    --pretty
+
 """
 
 from __future__ import annotations

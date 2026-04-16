@@ -1,0 +1,115 @@
+{
+  "metadata": {
+    "role": "investor",
+    "_comment": "Deterministic theory-grounded investor archetypes.",
+    "description": "Canonical investment decision archetypes for deterministic business simulation runs.",
+    "reference_notes": [
+      "MacMillan, I. C., Siegel, R., & Narasimha, P. N. S. (1985). Criteria used by venture capitalists to evaluate new venture proposals. Journal of Business Venturing.",
+      "Sahlman, W. A. (1990). The Structure and Governance of Venture-Capital Organizations. Journal of Financial Economics.",
+      "Gompers, P. A. (1995). Optimal Investment, Monitoring, and the Staging of Venture Capital. Journal of Finance."
+    ]
+  },
+  "archetypes": [
+    {
+      "archetype_id": "thesis_driven_vc",
+      "display_name": "Thesis-Driven VC",
+      "summary": "An early-stage venture investor screening through thematic fit and founder upside.",
+      "theory_tags": [
+        "venture_screening",
+        "early_stage_investing",
+        "theme_based_investing"
+      ],
+      "reference_notes": [
+        "MacMillan, I. C., Siegel, R., & Narasimha, P. N. S. (1985). Criteria used by venture capitalists to evaluate new venture proposals. Journal of Business Venturing.",
+        "Sahlman, W. A. (1990). The Structure and Governance of Venture-Capital Organizations. Journal of Financial Economics."
+      ],
+      "fields": {
+        "fund_type": "venture_capital",
+        "stage_focus": "pre_seed_seed",
+        "check_size_band": "small",
+        "geography_focus": "regional",
+        "portfolio_concentration": "balanced",
+        "decision_structure": "partner_led",
+        "liquidity_pressure": "medium",
+        "sector_specialization": "enterprise_software",
+        "market_size_preference": "mid_market",
+        "team_risk_tolerance": "high",
+        "valuation_sensitivity": "medium",
+        "traction_requirement": "vision_weighted",
+        "conviction_threshold": "medium",
+        "diligence_depth": "standard",
+        "governance_preference": "board_active",
+        "follow_on_reserve_style": "planned",
+        "speed_to_decision": "fast",
+        "theme_alignment_priority": "high"
+      }
+    },
+    {
+      "archetype_id": "metrics_driven_growth_investor",
+      "display_name": "Metrics-Driven Growth Investor",
+      "summary": "A later-stage investor prioritizing traction, valuation discipline, and governance.",
+      "theory_tags": [
+        "growth_investing",
+        "staged_financing",
+        "governance_and_monitoring"
+      ],
+      "reference_notes": [
+        "Gompers, P. A. (1995). Optimal Investment, Monitoring, and the Staging of Venture Capital. Journal of Finance.",
+        "Sahlman (1990)"
+      ],
+      "fields": {
+        "fund_type": "growth_equity",
+        "stage_focus": "growth_late_stage",
+        "check_size_band": "large",
+        "geography_focus": "global",
+        "portfolio_concentration": "concentrated",
+        "decision_structure": "committee_led",
+        "liquidity_pressure": "medium",
+        "sector_specialization": "generalist",
+        "market_size_preference": "large_tam_only",
+        "team_risk_tolerance": "low",
+        "valuation_sensitivity": "high",
+        "traction_requirement": "metrics_driven",
+        "conviction_threshold": "high",
+        "diligence_depth": "deep",
+        "governance_preference": "board_active",
+        "follow_on_reserve_style": "pro_rata_strict",
+        "speed_to_decision": "deliberate",
+        "theme_alignment_priority": "medium"
+      }
+    },
+    {
+      "archetype_id": "strategic_corporate_investor",
+      "display_name": "Strategic Corporate Investor",
+      "summary": "A corporate investor balancing financial return with strategic synergy and market access.",
+      "theory_tags": [
+        "strategic_investing",
+        "corporate_venture_logic",
+        "synergy_based_evaluation"
+      ],
+      "reference_notes": [
+        "Sahlman (1990)"
+      ],
+      "fields": {
+        "fund_type": "strategic_corporate",
+        "stage_focus": "series_a_b",
+        "check_size_band": "medium",
+        "geography_focus": "global",
+        "portfolio_concentration": "balanced",
+        "decision_structure": "committee_led",
+        "liquidity_pressure": "low",
+        "sector_specialization": "enterprise_software",
+        "market_size_preference": "large_tam_only",
+        "team_risk_tolerance": "medium",
+        "valuation_sensitivity": "medium",
+        "traction_requirement": "balanced",
+        "conviction_threshold": "high",
+        "diligence_depth": "deep",
+        "governance_preference": "board_active",
+        "follow_on_reserve_style": "planned",
+        "speed_to_decision": "slow",
+        "theme_alignment_priority": "high"
+      }
+    }
+  ]
+}

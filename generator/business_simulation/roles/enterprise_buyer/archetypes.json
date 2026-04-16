@@ -1,0 +1,137 @@
+{
+  "metadata": {
+    "role": "enterprise_buyer",
+    "_comment": "Deterministic theory-grounded enterprise buyer archetypes.",
+    "description": "Canonical B2B procurement decision-unit profiles for deterministic business simulation runs.",
+    "reference_notes": [
+      "Webster, F. E., & Wind, Y. (1972). A General Model for Understanding Organizational Buying Behavior. Journal of Marketing.",
+      "Robinson, P. J., Faris, C. W., & Wind, Y. (1967). Industrial Buying and Creative Marketing.",
+      "Cohen, W. M., & Levinthal, D. A. (1990). Absorptive Capacity: A New Perspective on Learning and Innovation. Administrative Science Quarterly."
+    ]
+  },
+  "archetypes": [
+    {
+      "archetype_id": "cost_controlled_operational_buyer",
+      "display_name": "Cost-Controlled Operational Buyer",
+      "summary": "A standardized mid-market procurement unit optimizing reliability and cost control.",
+      "theory_tags": [
+        "organizational_buying_behavior",
+        "buygrid_framework",
+        "procurement_maturity"
+      ],
+      "reference_notes": [
+        "Webster, F. E., & Wind, Y. (1972). A General Model for Understanding Organizational Buying Behavior. Journal of Marketing.",
+        "Robinson, P. J., Faris, C. W., & Wind, Y. (1967). Industrial Buying and Creative Marketing."
+      ],
+      "fields": {
+        "company_size": "mid_market",
+        "industry_vertical": "manufacturing",
+        "ownership_type": "private",
+        "region_scope": "national",
+        "digital_maturity": "medium",
+        "procurement_maturity": "standardized",
+        "annual_procurement_budget": "medium",
+        "buying_center_complexity": "cross_functional",
+        "risk_tolerance": "low",
+        "compliance_sensitivity": "medium",
+        "time_pressure": "medium",
+        "internal_alignment_level": "medium",
+        "technical_absorptive_capacity": "medium",
+        "evaluation_rigor": "structured",
+        "innovation_readiness": "selective",
+        "vendor_switching_willingness": "medium",
+        "price_orientation": "high",
+        "quality_orientation": "medium",
+        "service_orientation": "medium",
+        "customization_need": "configurable",
+        "purchase_planning_style": "scheduled",
+        "information_search_depth": "moderate",
+        "decision_cycle_speed": "deliberate",
+        "vendor_preference": "preferred_list",
+        "contract_preference": "fixed_term"
+      }
+    },
+    {
+      "archetype_id": "compliance_driven_institutional_buyer",
+      "display_name": "Compliance-Driven Institutional Buyer",
+      "summary": "A formal public-sector-like buying center with high governance and risk controls.",
+      "theory_tags": [
+        "organizational_buying_behavior",
+        "formal_procurement_governance",
+        "risk_reduction_in_b2b_buying"
+      ],
+      "reference_notes": [
+        "Webster & Wind (1972)",
+        "Robinson, Faris & Wind (1967)"
+      ],
+      "fields": {
+        "company_size": "large_enterprise",
+        "industry_vertical": "healthcare",
+        "ownership_type": "public",
+        "region_scope": "national",
+        "digital_maturity": "medium",
+        "procurement_maturity": "strategic",
+        "annual_procurement_budget": "high",
+        "buying_center_complexity": "committee_driven",
+        "risk_tolerance": "low",
+        "compliance_sensitivity": "high",
+        "time_pressure": "low",
+        "internal_alignment_level": "high",
+        "technical_absorptive_capacity": "medium",
+        "evaluation_rigor": "exhaustive",
+        "innovation_readiness": "cautious",
+        "vendor_switching_willingness": "low",
+        "price_orientation": "medium",
+        "quality_orientation": "high",
+        "service_orientation": "high",
+        "customization_need": "configurable",
+        "purchase_planning_style": "roadmap_driven",
+        "information_search_depth": "extensive",
+        "decision_cycle_speed": "slow",
+        "vendor_preference": "incumbent_biased",
+        "contract_preference": "fixed_term"
+      }
+    },
+    {
+      "archetype_id": "strategic_transformation_buyer",
+      "display_name": "Strategic Transformation Buyer",
+      "summary": "A digitally mature enterprise buyer seeking transformation through strategic sourcing.",
+      "theory_tags": [
+        "strategic_sourcing",
+        "absorptive_capacity",
+        "innovation_adoption_in_organizations"
+      ],
+      "reference_notes": [
+        "Cohen, W. M., & Levinthal, D. A. (1990). Absorptive Capacity: A New Perspective on Learning and Innovation. Administrative Science Quarterly.",
+        "Webster & Wind (1972)"
+      ],
+      "fields": {
+        "company_size": "large_enterprise",
+        "industry_vertical": "technology",
+        "ownership_type": "private",
+        "region_scope": "multinational",
+        "digital_maturity": "high",
+        "procurement_maturity": "strategic",
+        "annual_procurement_budget": "very_high",
+        "buying_center_complexity": "cross_functional",
+        "risk_tolerance": "medium",
+        "compliance_sensitivity": "medium",
+        "time_pressure": "high",
+        "internal_alignment_level": "high",
+        "technical_absorptive_capacity": "high",
+        "evaluation_rigor": "exhaustive",
+        "innovation_readiness": "progressive",
+        "vendor_switching_willingness": "high",
+        "price_orientation": "low",
+        "quality_orientation": "high",
+        "service_orientation": "high",
+        "customization_need": "bespoke",
+        "purchase_planning_style": "roadmap_driven",
+        "information_search_depth": "extensive",
+        "decision_cycle_speed": "deliberate",
+        "vendor_preference": "open_market",
+        "contract_preference": "strategic_partnership"
+      }
+    }
+  ]
+}

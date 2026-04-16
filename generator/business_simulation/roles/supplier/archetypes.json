@@ -1,0 +1,125 @@
+{
+  "metadata": {
+    "role": "supplier",
+    "_comment": "Deterministic theory-grounded supplier archetypes.",
+    "description": "Canonical supplier profiles for deterministic supply-side simulation runs.",
+    "reference_notes": [
+      "Williamson, O. E. (1985). The Economic Institutions of Capitalism.",
+      "Fisher, M. L. (1997). What Is the Right Supply Chain for Your Product? Harvard Business Review.",
+      "Christopher, M., & Peck, H. (2004). Building the Resilient Supply Chain. International Journal of Logistics Management."
+    ]
+  },
+  "archetypes": [
+    {
+      "archetype_id": "flexible_specialist_supplier",
+      "display_name": "Flexible Specialist Supplier",
+      "summary": "A specialist provider optimized for flexibility, customization, and fast onboarding.",
+      "theory_tags": [
+        "transaction_cost_economics",
+        "flexibility_based_competition",
+        "specialist_supplier_logic"
+      ],
+      "reference_notes": [
+        "Williamson, O. E. (1985). The Economic Institutions of Capitalism.",
+        "Fisher, M. L. (1997). What Is the Right Supply Chain for Your Product? Harvard Business Review."
+      ],
+      "fields": {
+        "supplier_type": "specialized_service",
+        "production_scale": "small_batch",
+        "geographic_coverage": "regional",
+        "capacity_flexibility": "high",
+        "quality_system_maturity": "standardized",
+        "lead_time_reliability": "medium",
+        "cost_position": "premium",
+        "bargaining_power": "low",
+        "pricing_discipline": "flexible",
+        "customization_capability": "engineered_to_order",
+        "supply_resilience": "stable",
+        "compliance_readiness": "qualified",
+        "service_level_commitment": "managed",
+        "inventory_buffer_policy": "balanced",
+        "negotiation_rigidity": "low",
+        "contract_horizon_preference": "mid_term",
+        "volume_commitment_requirement": "low",
+        "payment_term_flexibility": "high",
+        "exclusivity_willingness": "medium",
+        "partnership_selectivity": "screened",
+        "onboarding_speed": "fast"
+      }
+    },
+    {
+      "archetype_id": "scale_efficient_standardized_supplier",
+      "display_name": "Scale-Efficient Standardized Supplier",
+      "summary": "A standardized high-volume supplier competing through scale and cost discipline.",
+      "theory_tags": [
+        "scale_economies",
+        "cost_leadership",
+        "efficient_supply_chain_design"
+      ],
+      "reference_notes": [
+        "Porter (1980)",
+        "Fisher (1997)"
+      ],
+      "fields": {
+        "supplier_type": "contract_manufacturer",
+        "production_scale": "high_volume",
+        "geographic_coverage": "multi_country",
+        "capacity_flexibility": "medium",
+        "quality_system_maturity": "standardized",
+        "lead_time_reliability": "high",
+        "cost_position": "low_cost",
+        "bargaining_power": "medium",
+        "pricing_discipline": "balanced",
+        "customization_capability": "standard_only",
+        "supply_resilience": "stable",
+        "compliance_readiness": "qualified",
+        "service_level_commitment": "managed",
+        "inventory_buffer_policy": "lean",
+        "negotiation_rigidity": "medium",
+        "contract_horizon_preference": "long_term",
+        "volume_commitment_requirement": "high",
+        "payment_term_flexibility": "medium",
+        "exclusivity_willingness": "low",
+        "partnership_selectivity": "screened",
+        "onboarding_speed": "deliberate"
+      }
+    },
+    {
+      "archetype_id": "reliable_compliance_heavy_supplier",
+      "display_name": "Reliable Compliance-Heavy Supplier",
+      "summary": "A resilient supplier with advanced quality controls, strong SLAs, and slower onboarding.",
+      "theory_tags": [
+        "supply_resilience",
+        "quality_system_maturity",
+        "high_reliability_supply"
+      ],
+      "reference_notes": [
+        "Christopher, M., & Peck, H. (2004). Building the Resilient Supply Chain. International Journal of Logistics Management.",
+        "Williamson (1985)"
+      ],
+      "fields": {
+        "supplier_type": "logistics_fulfillment",
+        "production_scale": "mid_scale",
+        "geographic_coverage": "global",
+        "capacity_flexibility": "medium",
+        "quality_system_maturity": "advanced",
+        "lead_time_reliability": "high",
+        "cost_position": "competitive",
+        "bargaining_power": "medium",
+        "pricing_discipline": "firm",
+        "customization_capability": "configurable",
+        "supply_resilience": "redundant",
+        "compliance_readiness": "audit_ready",
+        "service_level_commitment": "mission_critical",
+        "inventory_buffer_policy": "buffer_heavy",
+        "negotiation_rigidity": "high",
+        "contract_horizon_preference": "long_term",
+        "volume_commitment_requirement": "medium",
+        "payment_term_flexibility": "low",
+        "exclusivity_willingness": "medium",
+        "partnership_selectivity": "highly_selective",
+        "onboarding_speed": "slow"
+      }
+    }
+  ]
+}

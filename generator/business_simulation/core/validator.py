@@ -13,6 +13,11 @@ DEFAULT_OPTIONAL_ENRICHMENT_FIELDS = (
     "contextual_identity",
 )
 
+DEFAULT_OPTIONAL_ARCHETYPE_FIELDS = (
+    "archetype_id",
+    "archetype_name",
+)
+
 
 @dataclass(frozen=True)
 class RoleDefinition:
@@ -287,6 +292,7 @@ def validate_generated_agent(agent: dict[str, Any], config: dict[str, Any]) -> N
         "role",
         *role_definition.output_groups,
         *role_definition.optional_enrichment_fields,
+        *DEFAULT_OPTIONAL_ARCHETYPE_FIELDS,
     }
     actual_top_level_keys = set(agent)
     unexpected_top_level_keys = sorted(

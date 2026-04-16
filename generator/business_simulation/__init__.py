@@ -6,9 +6,10 @@ the target module during parent-package initialization.
 """
 
 from .core import (RoleDefinition, enrich_agent_profile, generate_agents,
+                   generate_agents_from_archetypes, load_archetype_config,
                    load_schema_config, resolve_role_definition, save_agents,
-                   validate_distribution, validate_generated_agent,
-                   validate_schema_config)
+                   validate_archetype_config, validate_distribution,
+                   validate_generated_agent, validate_schema_config)
 from .enrichment import (BaseLLMProvider, ContextualIdentityError,
                          LLMProviderConfig, RoleCardConfig,
                          enrich_agents_with_contextual_identity)
@@ -22,6 +23,7 @@ __all__ = [
     "enrich_agent_profile",
     "enrich_agents_with_contextual_identity",
     "generate_agents",
+    "generate_agents_from_archetypes",
     "generate_competitor_agents",
     "generate_consumer_agents",
     "generate_enterprise_buyer_agents",
@@ -30,9 +32,11 @@ __all__ = [
     "generate_regulator_agents",
     "generate_technical_expert_agents",
     "generate_mentor_agents",
+    "load_archetype_config",
     "load_schema_config",
     "resolve_role_definition",
     "save_agents",
+    "validate_archetype_config",
     "validate_distribution",
     "validate_generated_agent",
     "validate_schema_config",

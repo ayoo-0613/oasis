@@ -1,0 +1,134 @@
+{
+  "metadata": {
+    "role": "competitor",
+    "_comment": "Deterministic theory-grounded competitor archetypes.",
+    "description": "Canonical competitive posture profiles for deterministic business simulation runs.",
+    "reference_notes": [
+      "Porter, M. E. (1980). Competitive Strategy.",
+      "Porter, M. E. (1985). Competitive Advantage.",
+      "Chen, M. J. (1996). Competitor Analysis and Interfirm Rivalry: Toward a Theoretical Integration. Academy of Management Review."
+    ]
+  },
+  "archetypes": [
+    {
+      "archetype_id": "market_leader_defender",
+      "display_name": "Market Leader Defender",
+      "summary": "A dominant incumbent using brand, channel, and lock-in to defend market position.",
+      "theory_tags": [
+        "market_leadership",
+        "competitive_strategy",
+        "defensive_posture"
+      ],
+      "reference_notes": [
+        "Porter, M. E. (1980). Competitive Strategy.",
+        "Porter, M. E. (1985). Competitive Advantage."
+      ],
+      "fields": {
+        "firm_size": "large",
+        "market_position": "leader",
+        "industry_focus": "diversified_platform",
+        "geographic_scope": "global",
+        "product_portfolio_breadth": "broad",
+        "brand_strength": "dominant",
+        "pricing_power": "high",
+        "digital_capability": "high",
+        "innovation_capacity": "high",
+        "execution_speed": "steady",
+        "channel_strength": "strong",
+        "customer_lock_in_strength": "high",
+        "partnership_strength": "high",
+        "operational_efficiency": "high",
+        "risk_appetite": "low",
+        "monitoring_intensity": "high",
+        "primary_competitive_posture": "defensive",
+        "response_aggressiveness": "medium",
+        "pricing_reaction_style": "value_hold",
+        "feature_reaction_style": "proactive",
+        "partnership_reaction_style": "alliance_push",
+        "campaign_reaction_speed": "measured",
+        "target_segment_focus": "full_market",
+        "defense_strategy": "moat_expansion"
+      }
+    },
+    {
+      "archetype_id": "disruptive_challenger",
+      "display_name": "Disruptive Challenger",
+      "summary": "A focused challenger willing to move aggressively on features, pricing, and category framing.",
+      "theory_tags": [
+        "challenger_strategy",
+        "disruptive_competition",
+        "competitive_dynamics"
+      ],
+      "reference_notes": [
+        "Porter (1980)",
+        "Chen, M. J. (1996). Competitor Analysis and Interfirm Rivalry: Toward a Theoretical Integration. Academy of Management Review."
+      ],
+      "fields": {
+        "firm_size": "midsize",
+        "market_position": "challenger",
+        "industry_focus": "focused_vertical",
+        "geographic_scope": "national",
+        "product_portfolio_breadth": "balanced",
+        "brand_strength": "emerging",
+        "pricing_power": "low",
+        "digital_capability": "high",
+        "innovation_capacity": "high",
+        "execution_speed": "fast",
+        "channel_strength": "moderate",
+        "customer_lock_in_strength": "low",
+        "partnership_strength": "medium",
+        "operational_efficiency": "medium",
+        "risk_appetite": "high",
+        "monitoring_intensity": "high",
+        "primary_competitive_posture": "disruptive",
+        "response_aggressiveness": "high",
+        "pricing_reaction_style": "discount_defense",
+        "feature_reaction_style": "proactive",
+        "partnership_reaction_style": "opportunistic",
+        "campaign_reaction_speed": "rapid",
+        "target_segment_focus": "core_segments",
+        "defense_strategy": "category_shaping"
+      }
+    },
+    {
+      "archetype_id": "fast_follower",
+      "display_name": "Fast Follower",
+      "summary": "An established follower competing through execution speed and selective imitation.",
+      "theory_tags": [
+        "follower_strategy",
+        "execution_based_competition",
+        "competitive_dynamics"
+      ],
+      "reference_notes": [
+        "Porter (1980)",
+        "Chen (1996)"
+      ],
+      "fields": {
+        "firm_size": "midsize",
+        "market_position": "strong_follower",
+        "industry_focus": "multi_vertical",
+        "geographic_scope": "national",
+        "product_portfolio_breadth": "balanced",
+        "brand_strength": "established",
+        "pricing_power": "medium",
+        "digital_capability": "medium",
+        "innovation_capacity": "medium",
+        "execution_speed": "fast",
+        "channel_strength": "moderate",
+        "customer_lock_in_strength": "medium",
+        "partnership_strength": "medium",
+        "operational_efficiency": "high",
+        "risk_appetite": "medium",
+        "monitoring_intensity": "high",
+        "primary_competitive_posture": "balanced",
+        "response_aggressiveness": "medium",
+        "pricing_reaction_style": "selective_matching",
+        "feature_reaction_style": "fast_follow",
+        "partnership_reaction_style": "opportunistic",
+        "campaign_reaction_speed": "rapid",
+        "target_segment_focus": "core_segments",
+        "defense_strategy": "account_retention"
+      }
+    }
+  ]
+}
