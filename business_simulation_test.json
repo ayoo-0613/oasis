@@ -1,0 +1,1372 @@
+{
+  "metadata": {
+    "generator": "business_simulation.run_pipeline",
+    "mode": "unified_pipeline",
+    "business_idea": "AI-powered website design platform for SMBs.",
+    "pipeline_stages": [
+      "input_business_idea",
+      "stochastic_consumer_generation",
+      "deterministic_business_archetype_generation",
+      "structured_technical_expert_generation",
+      "structured_mentor_generation",
+      "optional_contextual_identity_enrichment"
+    ],
+    "contextual_identity_enabled": true,
+    "contextual_identity_roles": [
+      "enterprise_buyer",
+      "competitor",
+      "supplier",
+      "technical_expert"
+    ],
+    "business_archetype_roles": [
+      "enterprise_buyer",
+      "competitor",
+      "investor",
+      "supplier",
+      "regulator"
+    ],
+    "stochastic_roles": [
+      "consumer",
+      "technical_expert",
+      "mentor"
+    ],
+    "generation_counts": {
+      "consumer": 20,
+      "enterprise_buyer": 3,
+      "competitor": 3,
+      "investor": 3,
+      "supplier": 3,
+      "regulator": 3,
+      "technical_expert": 1,
+      "mentor": 1
+    },
+    "seeds": {
+      "consumer_seed": null,
+      "expert_seed": null,
+      "mentor_seed": null
+    },
+    "llm_provider": "local",
+    "llm_model": "llama3.1:8b"
+  },
+  "agents": {
+    "consumer": [
+      {
+        "agent_id": "consumer_000001",
+        "role": "consumer",
+        "demographic": {
+          "age_group": "45_54",
+          "sex": "male",
+          "income_group": "upper_middle",
+          "education_group": "postgraduate",
+          "occupation_group": "professional",
+          "household_stage": "family_with_children",
+          "region_group": "metro"
+        },
+        "behavioral_traits": {
+          "involvement_level": "medium",
+          "quality_orientation": "high",
+          "risk_sensitivity": "medium",
+          "perceived_behavioral_control": "high",
+          "price_sensitivity": "low",
+          "decision_speed": "fast",
+          "purchase_planning_style": "habitual",
+          "novelty_adoption": "early_adopter",
+          "social_influence_susceptibility": "low"
+        },
+        "consumption_preferences": {
+          "promotion_sensitivity": "high",
+          "purchase_frequency_style": "routine",
+          "information_search_depth": "deep",
+          "brand_loyalty": "high",
+          "channel_preference": "digital_first"
+        }
+      },
+      {
+        "agent_id": "consumer_000002",
+        "role": "consumer",
+        "demographic": {
+          "age_group": "25_34",
+          "sex": "female",
+          "income_group": "low",
+          "education_group": "secondary_or_less",
+          "occupation_group": "entry_level",
+          "household_stage": "shared_household",
+          "region_group": "suburban"
+        },
+        "behavioral_traits": {
+          "involvement_level": "low",
+          "quality_orientation": "high",
+          "risk_sensitivity": "high",
+          "perceived_behavioral_control": "low",
+          "price_sensitivity": "medium",
+          "decision_speed": "fast",
+          "purchase_planning_style": "habitual",
+          "novelty_adoption": "late_majority",
+          "social_influence_susceptibility": "high"
+        },
+        "consumption_preferences": {
+          "promotion_sensitivity": "medium",
+          "purchase_frequency_style": "infrequent",
+          "information_search_depth": "shallow",
+          "brand_loyalty": "low",
+          "channel_preference": "store_first"
+        }
+      },
+      {
+        "agent_id": "consumer_000003",
+        "role": "consumer",
+        "demographic": {
+          "age_group": "25_34",
+          "sex": "female",
+          "income_group": "high",
+          "education_group": "undergraduate",
+          "occupation_group": "retired",
+          "household_stage": "single",
+          "region_group": "regional"
+        },
+        "behavioral_traits": {
+          "involvement_level": "high",
+          "quality_orientation": "low",
+          "risk_sensitivity": "high",
+          "perceived_behavioral_control": "high",
+          "price_sensitivity": "low",
+          "decision_speed": "slow",
+          "purchase_planning_style": "habitual",
+          "novelty_adoption": "late_majority",
+          "social_influence_susceptibility": "low"
+        },
+        "consumption_preferences": {
+          "promotion_sensitivity": "high",
+          "purchase_frequency_style": "routine",
+          "information_search_depth": "moderate",
+          "brand_loyalty": "high",
+          "channel_preference": "store_first"
+        }
+      },
+      {
+        "agent_id": "consumer_000004",
+        "role": "consumer",
+        "demographic": {
+          "age_group": "55_64",
+          "sex": "female",
+          "income_group": "low",
+          "education_group": "vocational",
+          "occupation_group": "professional",
+          "household_stage": "couple_no_children",
+          "region_group": "metro"
+        },
+        "behavioral_traits": {
+          "involvement_level": "low",
+          "quality_orientation": "high",
+          "risk_sensitivity": "high",
+          "perceived_behavioral_control": "low",
+          "price_sensitivity": "medium",
+          "decision_speed": "deliberate",
+          "purchase_planning_style": "habitual",
+          "novelty_adoption": "late_majority",
+          "social_influence_susceptibility": "low"
+        },
+        "consumption_preferences": {
+          "promotion_sensitivity": "high",
+          "purchase_frequency_style": "infrequent",
+          "information_search_depth": "moderate",
+          "brand_loyalty": "high",
+          "channel_preference": "omnichannel"
+        }
+      },
+      {
+        "agent_id": "consumer_000005",
+        "role": "consumer",
+        "demographic": {
+          "age_group": "18_24",
+          "sex": "male",
+          "income_group": "lower_middle",
+          "education_group": "vocational",
+          "occupation_group": "professional",
+          "household_stage": "single",
+          "region_group": "suburban"
+        },
+        "behavioral_traits": {
+          "involvement_level": "low",
+          "quality_orientation": "high",
+          "risk_sensitivity": "medium",
+          "perceived_behavioral_control": "low",
+          "price_sensitivity": "medium",
+          "decision_speed": "deliberate",
+          "purchase_planning_style": "impulsive",
+          "novelty_adoption": "early_majority",
+          "social_influence_susceptibility": "low"
+        },
+        "consumption_preferences": {
+          "promotion_sensitivity": "high",
+          "purchase_frequency_style": "infrequent",
+          "information_search_depth": "shallow",
+          "brand_loyalty": "low",
+          "channel_preference": "omnichannel"
+        }
+      },
+      {
+        "agent_id": "consumer_000006",
+        "role": "consumer",
+        "demographic": {
+          "age_group": "55_64",
+          "sex": "female",
+          "income_group": "lower_middle",
+          "education_group": "secondary_or_less",
+          "occupation_group": "retired",
+          "household_stage": "family_with_children",
+          "region_group": "regional"
+        },
+        "behavioral_traits": {
+          "involvement_level": "low",
+          "quality_orientation": "low",
+          "risk_sensitivity": "low",
+          "perceived_behavioral_control": "high",
+          "price_sensitivity": "medium",
+          "decision_speed": "fast",
+          "purchase_planning_style": "limited_problem_solving",
+          "novelty_adoption": "early_majority",
+          "social_influence_susceptibility": "low"
+        },
+        "consumption_preferences": {
+          "promotion_sensitivity": "medium",
+          "purchase_frequency_style": "frequent",
+          "information_search_depth": "deep",
+          "brand_loyalty": "medium",
+          "channel_preference": "store_first"
+        }
+      },
+      {
+        "agent_id": "consumer_000007",
+        "role": "consumer",
+        "demographic": {
+          "age_group": "45_54",
+          "sex": "female",
+          "income_group": "high",
+          "education_group": "vocational",
+          "occupation_group": "retired",
+          "household_stage": "single",
+          "region_group": "suburban"
+        },
+        "behavioral_traits": {
+          "involvement_level": "high",
+          "quality_orientation": "high",
+          "risk_sensitivity": "high",
+          "perceived_behavioral_control": "low",
+          "price_sensitivity": "low",
+          "decision_speed": "slow",
+          "purchase_planning_style": "extended_problem_solving",
+          "novelty_adoption": "laggard",
+          "social_influence_susceptibility": "low"
+        },
+        "consumption_preferences": {
+          "promotion_sensitivity": "low",
+          "purchase_frequency_style": "routine",
+          "information_search_depth": "deep",
+          "brand_loyalty": "medium",
+          "channel_preference": "store_first"
+        }
+      },
+      {
+        "agent_id": "consumer_000008",
+        "role": "consumer",
+        "demographic": {
+          "age_group": "25_34",
+          "sex": "female",
+          "income_group": "lower_middle",
+          "education_group": "secondary_or_less",
+          "occupation_group": "professional",
+          "household_stage": "single",
+          "region_group": "regional"
+        },
+        "behavioral_traits": {
+          "involvement_level": "medium",
+          "quality_orientation": "medium",
+          "risk_sensitivity": "medium",
+          "perceived_behavioral_control": "medium",
+          "price_sensitivity": "high",
+          "decision_speed": "slow",
+          "purchase_planning_style": "extended_problem_solving",
+          "novelty_adoption": "late_majority",
+          "social_influence_susceptibility": "medium"
+        },
+        "consumption_preferences": {
+          "promotion_sensitivity": "medium",
+          "purchase_frequency_style": "infrequent",
+          "information_search_depth": "moderate",
+          "brand_loyalty": "high",
+          "channel_preference": "omnichannel"
+        }
+      },
+      {
+        "agent_id": "consumer_000009",
+        "role": "consumer",
+        "demographic": {
+          "age_group": "45_54",
+          "sex": "female",
+          "income_group": "upper_middle",
+          "education_group": "undergraduate",
+          "occupation_group": "student",
+          "household_stage": "empty_nest",
+          "region_group": "regional"
+        },
+        "behavioral_traits": {
+          "involvement_level": "high",
+          "quality_orientation": "medium",
+          "risk_sensitivity": "high",
+          "perceived_behavioral_control": "high",
+          "price_sensitivity": "medium",
+          "decision_speed": "deliberate",
+          "purchase_planning_style": "limited_problem_solving",
+          "novelty_adoption": "early_majority",
+          "social_influence_susceptibility": "medium"
+        },
+        "consumption_preferences": {
+          "promotion_sensitivity": "high",
+          "purchase_frequency_style": "routine",
+          "information_search_depth": "deep",
+          "brand_loyalty": "medium",
+          "channel_preference": "store_first"
+        }
+      },
+      {
+        "agent_id": "consumer_000010",
+        "role": "consumer",
+        "demographic": {
+          "age_group": "55_64",
+          "sex": "male",
+          "income_group": "lower_middle",
+          "education_group": "vocational",
+          "occupation_group": "managerial",
+          "household_stage": "shared_household",
+          "region_group": "regional"
+        },
+        "behavioral_traits": {
+          "involvement_level": "high",
+          "quality_orientation": "medium",
+          "risk_sensitivity": "medium",
+          "perceived_behavioral_control": "low",
+          "price_sensitivity": "low",
+          "decision_speed": "deliberate",
+          "purchase_planning_style": "extended_problem_solving",
+          "novelty_adoption": "early_majority",
+          "social_influence_susceptibility": "medium"
+        },
+        "consumption_preferences": {
+          "promotion_sensitivity": "high",
+          "purchase_frequency_style": "routine",
+          "information_search_depth": "moderate",
+          "brand_loyalty": "medium",
+          "channel_preference": "store_first"
+        }
+      },
+      {
+        "agent_id": "consumer_000011",
+        "role": "consumer",
+        "demographic": {
+          "age_group": "55_64",
+          "sex": "male",
+          "income_group": "upper_middle",
+          "education_group": "undergraduate",
+          "occupation_group": "professional",
+          "household_stage": "single",
+          "region_group": "suburban"
+        },
+        "behavioral_traits": {
+          "involvement_level": "medium",
+          "quality_orientation": "high",
+          "risk_sensitivity": "low",
+          "perceived_behavioral_control": "medium",
+          "price_sensitivity": "high",
+          "decision_speed": "slow",
+          "purchase_planning_style": "limited_problem_solving",
+          "novelty_adoption": "late_majority",
+          "social_influence_susceptibility": "low"
+        },
+        "consumption_preferences": {
+          "promotion_sensitivity": "low",
+          "purchase_frequency_style": "routine",
+          "information_search_depth": "deep",
+          "brand_loyalty": "medium",
+          "channel_preference": "omnichannel"
+        }
+      },
+      {
+        "agent_id": "consumer_000012",
+        "role": "consumer",
+        "demographic": {
+          "age_group": "45_54",
+          "sex": "female",
+          "income_group": "lower_middle",
+          "education_group": "secondary_or_less",
+          "occupation_group": "student",
+          "household_stage": "shared_household",
+          "region_group": "suburban"
+        },
+        "behavioral_traits": {
+          "involvement_level": "high",
+          "quality_orientation": "low",
+          "risk_sensitivity": "high",
+          "perceived_behavioral_control": "medium",
+          "price_sensitivity": "medium",
+          "decision_speed": "deliberate",
+          "purchase_planning_style": "habitual",
+          "novelty_adoption": "late_majority",
+          "social_influence_susceptibility": "low"
+        },
+        "consumption_preferences": {
+          "promotion_sensitivity": "medium",
+          "purchase_frequency_style": "frequent",
+          "information_search_depth": "deep",
+          "brand_loyalty": "high",
+          "channel_preference": "store_first"
+        }
+      },
+      {
+        "agent_id": "consumer_000013",
+        "role": "consumer",
+        "demographic": {
+          "age_group": "45_54",
+          "sex": "male",
+          "income_group": "lower_middle",
+          "education_group": "undergraduate",
+          "occupation_group": "managerial",
+          "household_stage": "empty_nest",
+          "region_group": "suburban"
+        },
+        "behavioral_traits": {
+          "involvement_level": "medium",
+          "quality_orientation": "high",
+          "risk_sensitivity": "medium",
+          "perceived_behavioral_control": "medium",
+          "price_sensitivity": "high",
+          "decision_speed": "deliberate",
+          "purchase_planning_style": "limited_problem_solving",
+          "novelty_adoption": "laggard",
+          "social_influence_susceptibility": "low"
+        },
+        "consumption_preferences": {
+          "promotion_sensitivity": "high",
+          "purchase_frequency_style": "routine",
+          "information_search_depth": "shallow",
+          "brand_loyalty": "medium",
+          "channel_preference": "omnichannel"
+        }
+      },
+      {
+        "agent_id": "consumer_000014",
+        "role": "consumer",
+        "demographic": {
+          "age_group": "65_plus",
+          "sex": "female",
+          "income_group": "lower_middle",
+          "education_group": "undergraduate",
+          "occupation_group": "professional",
+          "household_stage": "family_with_children",
+          "region_group": "suburban"
+        },
+        "behavioral_traits": {
+          "involvement_level": "medium",
+          "quality_orientation": "high",
+          "risk_sensitivity": "low",
+          "perceived_behavioral_control": "medium",
+          "price_sensitivity": "medium",
+          "decision_speed": "fast",
+          "purchase_planning_style": "extended_problem_solving",
+          "novelty_adoption": "innovator",
+          "social_influence_susceptibility": "medium"
+        },
+        "consumption_preferences": {
+          "promotion_sensitivity": "low",
+          "purchase_frequency_style": "routine",
+          "information_search_depth": "moderate",
+          "brand_loyalty": "low",
+          "channel_preference": "omnichannel"
+        }
+      },
+      {
+        "agent_id": "consumer_000015",
+        "role": "consumer",
+        "demographic": {
+          "age_group": "18_24",
+          "sex": "male",
+          "income_group": "lower_middle",
+          "education_group": "undergraduate",
+          "occupation_group": "unemployed",
+          "household_stage": "couple_no_children",
+          "region_group": "metro"
+        },
+        "behavioral_traits": {
+          "involvement_level": "high",
+          "quality_orientation": "high",
+          "risk_sensitivity": "low",
+          "perceived_behavioral_control": "low",
+          "price_sensitivity": "medium",
+          "decision_speed": "deliberate",
+          "purchase_planning_style": "extended_problem_solving",
+          "novelty_adoption": "early_majority",
+          "social_influence_susceptibility": "high"
+        },
+        "consumption_preferences": {
+          "promotion_sensitivity": "medium",
+          "purchase_frequency_style": "frequent",
+          "information_search_depth": "deep",
+          "brand_loyalty": "medium",
+          "channel_preference": "omnichannel"
+        }
+      },
+      {
+        "agent_id": "consumer_000016",
+        "role": "consumer",
+        "demographic": {
+          "age_group": "45_54",
+          "sex": "female",
+          "income_group": "lower_middle",
+          "education_group": "secondary_or_less",
+          "occupation_group": "student",
+          "household_stage": "shared_household",
+          "region_group": "suburban"
+        },
+        "behavioral_traits": {
+          "involvement_level": "low",
+          "quality_orientation": "medium",
+          "risk_sensitivity": "medium",
+          "perceived_behavioral_control": "high",
+          "price_sensitivity": "medium",
+          "decision_speed": "deliberate",
+          "purchase_planning_style": "impulsive",
+          "novelty_adoption": "early_majority",
+          "social_influence_susceptibility": "low"
+        },
+        "consumption_preferences": {
+          "promotion_sensitivity": "high",
+          "purchase_frequency_style": "routine",
+          "information_search_depth": "moderate",
+          "brand_loyalty": "low",
+          "channel_preference": "omnichannel"
+        }
+      },
+      {
+        "agent_id": "consumer_000017",
+        "role": "consumer",
+        "demographic": {
+          "age_group": "55_64",
+          "sex": "male",
+          "income_group": "lower_middle",
+          "education_group": "vocational",
+          "occupation_group": "entry_level",
+          "household_stage": "couple_no_children",
+          "region_group": "regional"
+        },
+        "behavioral_traits": {
+          "involvement_level": "medium",
+          "quality_orientation": "high",
+          "risk_sensitivity": "high",
+          "perceived_behavioral_control": "medium",
+          "price_sensitivity": "high",
+          "decision_speed": "deliberate",
+          "purchase_planning_style": "limited_problem_solving",
+          "novelty_adoption": "early_adopter",
+          "social_influence_susceptibility": "medium"
+        },
+        "consumption_preferences": {
+          "promotion_sensitivity": "high",
+          "purchase_frequency_style": "infrequent",
+          "information_search_depth": "moderate",
+          "brand_loyalty": "medium",
+          "channel_preference": "omnichannel"
+        }
+      },
+      {
+        "agent_id": "consumer_000018",
+        "role": "consumer",
+        "demographic": {
+          "age_group": "45_54",
+          "sex": "male",
+          "income_group": "lower_middle",
+          "education_group": "undergraduate",
+          "occupation_group": "managerial",
+          "household_stage": "shared_household",
+          "region_group": "suburban"
+        },
+        "behavioral_traits": {
+          "involvement_level": "high",
+          "quality_orientation": "high",
+          "risk_sensitivity": "low",
+          "perceived_behavioral_control": "medium",
+          "price_sensitivity": "low",
+          "decision_speed": "deliberate",
+          "purchase_planning_style": "limited_problem_solving",
+          "novelty_adoption": "late_majority",
+          "social_influence_susceptibility": "low"
+        },
+        "consumption_preferences": {
+          "promotion_sensitivity": "medium",
+          "purchase_frequency_style": "routine",
+          "information_search_depth": "moderate",
+          "brand_loyalty": "low",
+          "channel_preference": "omnichannel"
+        }
+      },
+      {
+        "agent_id": "consumer_000019",
+        "role": "consumer",
+        "demographic": {
+          "age_group": "18_24",
+          "sex": "female",
+          "income_group": "high",
+          "education_group": "undergraduate",
+          "occupation_group": "entry_level",
+          "household_stage": "shared_household",
+          "region_group": "metro"
+        },
+        "behavioral_traits": {
+          "involvement_level": "medium",
+          "quality_orientation": "high",
+          "risk_sensitivity": "medium",
+          "perceived_behavioral_control": "medium",
+          "price_sensitivity": "high",
+          "decision_speed": "deliberate",
+          "purchase_planning_style": "limited_problem_solving",
+          "novelty_adoption": "early_adopter",
+          "social_influence_susceptibility": "medium"
+        },
+        "consumption_preferences": {
+          "promotion_sensitivity": "low",
+          "purchase_frequency_style": "routine",
+          "information_search_depth": "moderate",
+          "brand_loyalty": "medium",
+          "channel_preference": "store_first"
+        }
+      },
+      {
+        "agent_id": "consumer_000020",
+        "role": "consumer",
+        "demographic": {
+          "age_group": "65_plus",
+          "sex": "female",
+          "income_group": "low",
+          "education_group": "vocational",
+          "occupation_group": "student",
+          "household_stage": "couple_no_children",
+          "region_group": "suburban"
+        },
+        "behavioral_traits": {
+          "involvement_level": "high",
+          "quality_orientation": "high",
+          "risk_sensitivity": "medium",
+          "perceived_behavioral_control": "low",
+          "price_sensitivity": "high",
+          "decision_speed": "fast",
+          "purchase_planning_style": "extended_problem_solving",
+          "novelty_adoption": "laggard",
+          "social_influence_susceptibility": "low"
+        },
+        "consumption_preferences": {
+          "promotion_sensitivity": "low",
+          "purchase_frequency_style": "frequent",
+          "information_search_depth": "deep",
+          "brand_loyalty": "medium",
+          "channel_preference": "store_first"
+        }
+      }
+    ],
+    "enterprise_buyer": [
+      {
+        "agent_id": "enterprise_buyer_000001",
+        "role": "enterprise_buyer",
+        "archetype_id": "cost_controlled_operational_buyer",
+        "archetype_name": "Cost-Controlled Operational Buyer",
+        "organization_profile": {
+          "company_size": "mid_market",
+          "industry_vertical": "manufacturing",
+          "ownership_type": "private",
+          "region_scope": "national",
+          "digital_maturity": "medium",
+          "procurement_maturity": "standardized",
+          "annual_procurement_budget": "medium",
+          "buying_center_complexity": "cross_functional"
+        },
+        "buying_capabilities": {
+          "risk_tolerance": "low",
+          "compliance_sensitivity": "medium",
+          "time_pressure": "medium",
+          "internal_alignment_level": "medium",
+          "technical_absorptive_capacity": "medium",
+          "evaluation_rigor": "structured",
+          "innovation_readiness": "selective",
+          "vendor_switching_willingness": "medium"
+        },
+        "procurement_preferences": {
+          "price_orientation": "high",
+          "quality_orientation": "medium",
+          "service_orientation": "medium",
+          "customization_need": "configurable",
+          "purchase_planning_style": "scheduled",
+          "information_search_depth": "moderate",
+          "decision_cycle_speed": "deliberate",
+          "vendor_preference": "preferred_list",
+          "contract_preference": "fixed_term"
+        },
+        "contextual_identity": {
+          "market_identity": "Efficient, cost-effective AI-powered website design platform for SMBs",
+          "organization_type": "Mid-market private manufacturing company with standardized procurement processes",
+          "industry_context": "Manufacturing sector with increasing need for e-commerce presence",
+          "primary_use_case": "Configurable website design platform with low upfront costs and easy updates",
+          "current_alternative": "Outdated website design platforms relying on manual updates",
+          "key_pain_points": [
+            "High costs associated with custom website designs",
+            "Difficulty in updating websites without technical expertise"
+          ],
+          "adoption_context": "Small-to-medium-sized manufacturers adopting digital tools to reduce costs",
+          "buying_relevance": "Moderately relevant due to medium innovation readiness and low risk tolerance"
+        }
+      },
+      {
+        "agent_id": "enterprise_buyer_000002",
+        "role": "enterprise_buyer",
+        "archetype_id": "compliance_driven_institutional_buyer",
+        "archetype_name": "Compliance-Driven Institutional Buyer",
+        "organization_profile": {
+          "company_size": "large_enterprise",
+          "industry_vertical": "healthcare",
+          "ownership_type": "public",
+          "region_scope": "national",
+          "digital_maturity": "medium",
+          "procurement_maturity": "strategic",
+          "annual_procurement_budget": "high",
+          "buying_center_complexity": "committee_driven"
+        },
+        "buying_capabilities": {
+          "risk_tolerance": "low",
+          "compliance_sensitivity": "high",
+          "time_pressure": "low",
+          "internal_alignment_level": "high",
+          "technical_absorptive_capacity": "medium",
+          "evaluation_rigor": "exhaustive",
+          "innovation_readiness": "cautious",
+          "vendor_switching_willingness": "low"
+        },
+        "procurement_preferences": {
+          "price_orientation": "medium",
+          "quality_orientation": "high",
+          "service_orientation": "high",
+          "customization_need": "configurable",
+          "purchase_planning_style": "roadmap_driven",
+          "information_search_depth": "extensive",
+          "decision_cycle_speed": "slow",
+          "vendor_preference": "incumbent_biased",
+          "contract_preference": "fixed_term"
+        },
+        "contextual_identity": {
+          "market_identity": "Compliance-Driven Institutional Buyer of AI-powered website design platforms.",
+          "organization_type": "Publicly-owned large enterprise",
+          "industry_context": "Healthcare organizations with complex regulatory requirements.",
+          "primary_use_case": "Configurable and compliant website redesigns for multiple locations",
+          "current_alternative": "Manual redesigns and third-party consultants",
+          "key_pain_points": [
+            "Inefficient manual design processes",
+            "Compliance risks from outdated websites"
+          ],
+          "adoption_context": "Institutional buyers seeking to modernize their website presence.",
+          "buying_relevance": "High-value procurement of digital solutions for compliance-sensitive industries."
+        }
+      },
+      {
+        "agent_id": "enterprise_buyer_000003",
+        "role": "enterprise_buyer",
+        "archetype_id": "strategic_transformation_buyer",
+        "archetype_name": "Strategic Transformation Buyer",
+        "organization_profile": {
+          "company_size": "large_enterprise",
+          "industry_vertical": "technology",
+          "ownership_type": "private",
+          "region_scope": "multinational",
+          "digital_maturity": "high",
+          "procurement_maturity": "strategic",
+          "annual_procurement_budget": "very_high",
+          "buying_center_complexity": "cross_functional"
+        },
+        "buying_capabilities": {
+          "risk_tolerance": "medium",
+          "compliance_sensitivity": "medium",
+          "time_pressure": "high",
+          "internal_alignment_level": "high",
+          "technical_absorptive_capacity": "high",
+          "evaluation_rigor": "exhaustive",
+          "innovation_readiness": "progressive",
+          "vendor_switching_willingness": "high"
+        },
+        "procurement_preferences": {
+          "price_orientation": "low",
+          "quality_orientation": "high",
+          "service_orientation": "high",
+          "customization_need": "bespoke",
+          "purchase_planning_style": "roadmap_driven",
+          "information_search_depth": "extensive",
+          "decision_cycle_speed": "deliberate",
+          "vendor_preference": "open_market",
+          "contract_preference": "strategic_partnership"
+        },
+        "contextual_identity": {
+          "market_identity": "AI-powered website design platform for SMBs",
+          "organization_type": "large private enterprise",
+          "industry_context": "technology services",
+          "primary_use_case": "SMB website modernization",
+          "current_alternative": "in-house web design team",
+          "key_pain_points": [
+            "complex website redesign",
+            "high development costs"
+          ],
+          "adoption_context": "digital transformation",
+          "buying_relevance": "high"
+        }
+      }
+    ],
+    "competitor": [
+      {
+        "agent_id": "competitor_000001",
+        "role": "competitor",
+        "archetype_id": "market_leader_defender",
+        "archetype_name": "Market Leader Defender",
+        "firm_profile": {
+          "firm_size": "large",
+          "market_position": "leader",
+          "industry_focus": "diversified_platform",
+          "geographic_scope": "global",
+          "product_portfolio_breadth": "broad",
+          "brand_strength": "dominant",
+          "pricing_power": "high",
+          "digital_capability": "high"
+        },
+        "strategic_capabilities": {
+          "innovation_capacity": "high",
+          "execution_speed": "steady",
+          "channel_strength": "strong",
+          "customer_lock_in_strength": "high",
+          "partnership_strength": "high",
+          "operational_efficiency": "high",
+          "risk_appetite": "low",
+          "monitoring_intensity": "high"
+        },
+        "competitive_behavior": {
+          "primary_competitive_posture": "defensive",
+          "response_aggressiveness": "medium",
+          "pricing_reaction_style": "value_hold",
+          "feature_reaction_style": "proactive",
+          "partnership_reaction_style": "alliance_push",
+          "campaign_reaction_speed": "measured",
+          "target_segment_focus": "full_market",
+          "defense_strategy": "moat_expansion"
+        },
+        "contextual_identity": {
+          "market_identity": "Innovative, AI-driven website creation solution",
+          "competitor_type": "AI-powered design tool provider",
+          "overlap_scope": "Market Leader Defender's existing SMB client base",
+          "competing_offer": "SiteLlama: AI-Powered Website Design",
+          "positioning_style": "Differentiation through AI innovation",
+          "likely_target_segment": "Small and Medium-Sized Businesses (SMBs)",
+          "strategic_posture": "Defensive expansion through feature upgrades",
+          "competitive_relevance": "SMB-focused website design platform"
+        }
+      },
+      {
+        "agent_id": "competitor_000002",
+        "role": "competitor",
+        "archetype_id": "disruptive_challenger",
+        "archetype_name": "Disruptive Challenger",
+        "firm_profile": {
+          "firm_size": "midsize",
+          "market_position": "challenger",
+          "industry_focus": "focused_vertical",
+          "geographic_scope": "national",
+          "product_portfolio_breadth": "balanced",
+          "brand_strength": "emerging",
+          "pricing_power": "low",
+          "digital_capability": "high"
+        },
+        "strategic_capabilities": {
+          "innovation_capacity": "high",
+          "execution_speed": "fast",
+          "channel_strength": "moderate",
+          "customer_lock_in_strength": "low",
+          "partnership_strength": "medium",
+          "operational_efficiency": "medium",
+          "risk_appetite": "high",
+          "monitoring_intensity": "high"
+        },
+        "competitive_behavior": {
+          "primary_competitive_posture": "disruptive",
+          "response_aggressiveness": "high",
+          "pricing_reaction_style": "discount_defense",
+          "feature_reaction_style": "proactive",
+          "partnership_reaction_style": "opportunistic",
+          "campaign_reaction_speed": "rapid",
+          "target_segment_focus": "core_segments",
+          "defense_strategy": "category_shaping"
+        },
+        "contextual_identity": {
+          "market_identity": "Innovative web design solutions for SMBs",
+          "competitor_type": "Platform provider",
+          "overlap_scope": "Website design, development, and launch",
+          "competing_offer": "AI-powered website design platform",
+          "positioning_style": "Proactive and customer-centric",
+          "likely_target_segment": "Small to medium-sized businesses",
+          "strategic_posture": "Disruptive challenger",
+          "competitive_relevance": "Cost-effective alternative to traditional design agencies"
+        }
+      },
+      {
+        "agent_id": "competitor_000003",
+        "role": "competitor",
+        "archetype_id": "fast_follower",
+        "archetype_name": "Fast Follower",
+        "firm_profile": {
+          "firm_size": "midsize",
+          "market_position": "strong_follower",
+          "industry_focus": "multi_vertical",
+          "geographic_scope": "national",
+          "product_portfolio_breadth": "balanced",
+          "brand_strength": "established",
+          "pricing_power": "medium",
+          "digital_capability": "medium"
+        },
+        "strategic_capabilities": {
+          "innovation_capacity": "medium",
+          "execution_speed": "fast",
+          "channel_strength": "moderate",
+          "customer_lock_in_strength": "medium",
+          "partnership_strength": "medium",
+          "operational_efficiency": "high",
+          "risk_appetite": "medium",
+          "monitoring_intensity": "high"
+        },
+        "competitive_behavior": {
+          "primary_competitive_posture": "balanced",
+          "response_aggressiveness": "medium",
+          "pricing_reaction_style": "selective_matching",
+          "feature_reaction_style": "fast_follow",
+          "partnership_reaction_style": "opportunistic",
+          "campaign_reaction_speed": "rapid",
+          "target_segment_focus": "core_segments",
+          "defense_strategy": "account_retention"
+        },
+        "contextual_identity": {
+          "market_identity": "Innovative online design studio",
+          "competitor_type": "Emerging player in digital marketing services",
+          "overlap_scope": "Web design, development, and maintenance",
+          "competing_offer": "AI-powered website design platform",
+          "positioning_style": "Competitive pricing with added value",
+          "likely_target_segment": "Small to medium-sized businesses (SMBs)",
+          "strategic_posture": "Aggressive market expansion through partnerships",
+          "competitive_relevance": "Fast and affordable web design solutions for SMBs"
+        }
+      }
+    ],
+    "investor": [
+      {
+        "agent_id": "investor_000001",
+        "role": "investor",
+        "archetype_id": "thesis_driven_vc",
+        "archetype_name": "Thesis-Driven VC",
+        "fund_profile": {
+          "fund_type": "venture_capital",
+          "stage_focus": "pre_seed_seed",
+          "check_size_band": "small",
+          "geography_focus": "regional",
+          "portfolio_concentration": "balanced",
+          "decision_structure": "partner_led",
+          "liquidity_pressure": "medium",
+          "sector_specialization": "enterprise_software"
+        },
+        "investment_preferences": {
+          "market_size_preference": "mid_market",
+          "team_risk_tolerance": "high",
+          "valuation_sensitivity": "medium",
+          "traction_requirement": "vision_weighted",
+          "conviction_threshold": "medium"
+        },
+        "evaluation_style": {
+          "diligence_depth": "standard",
+          "governance_preference": "board_active",
+          "follow_on_reserve_style": "planned",
+          "speed_to_decision": "fast",
+          "theme_alignment_priority": "high"
+        }
+      },
+      {
+        "agent_id": "investor_000002",
+        "role": "investor",
+        "archetype_id": "metrics_driven_growth_investor",
+        "archetype_name": "Metrics-Driven Growth Investor",
+        "fund_profile": {
+          "fund_type": "growth_equity",
+          "stage_focus": "growth_late_stage",
+          "check_size_band": "large",
+          "geography_focus": "global",
+          "portfolio_concentration": "concentrated",
+          "decision_structure": "committee_led",
+          "liquidity_pressure": "medium",
+          "sector_specialization": "generalist"
+        },
+        "investment_preferences": {
+          "market_size_preference": "large_tam_only",
+          "team_risk_tolerance": "low",
+          "valuation_sensitivity": "high",
+          "traction_requirement": "metrics_driven",
+          "conviction_threshold": "high"
+        },
+        "evaluation_style": {
+          "diligence_depth": "deep",
+          "governance_preference": "board_active",
+          "follow_on_reserve_style": "pro_rata_strict",
+          "speed_to_decision": "deliberate",
+          "theme_alignment_priority": "medium"
+        }
+      },
+      {
+        "agent_id": "investor_000003",
+        "role": "investor",
+        "archetype_id": "strategic_corporate_investor",
+        "archetype_name": "Strategic Corporate Investor",
+        "fund_profile": {
+          "fund_type": "strategic_corporate",
+          "stage_focus": "series_a_b",
+          "check_size_band": "medium",
+          "geography_focus": "global",
+          "portfolio_concentration": "balanced",
+          "decision_structure": "committee_led",
+          "liquidity_pressure": "low",
+          "sector_specialization": "enterprise_software"
+        },
+        "investment_preferences": {
+          "market_size_preference": "large_tam_only",
+          "team_risk_tolerance": "medium",
+          "valuation_sensitivity": "medium",
+          "traction_requirement": "balanced",
+          "conviction_threshold": "high"
+        },
+        "evaluation_style": {
+          "diligence_depth": "deep",
+          "governance_preference": "board_active",
+          "follow_on_reserve_style": "planned",
+          "speed_to_decision": "slow",
+          "theme_alignment_priority": "high"
+        }
+      }
+    ],
+    "supplier": [
+      {
+        "agent_id": "supplier_000001",
+        "role": "supplier",
+        "archetype_id": "flexible_specialist_supplier",
+        "archetype_name": "Flexible Specialist Supplier",
+        "supply_profile": {
+          "supplier_type": "specialized_service",
+          "production_scale": "small_batch",
+          "geographic_coverage": "regional",
+          "capacity_flexibility": "high",
+          "quality_system_maturity": "standardized",
+          "lead_time_reliability": "medium",
+          "cost_position": "premium",
+          "bargaining_power": "low"
+        },
+        "commercial_capabilities": {
+          "pricing_discipline": "flexible",
+          "customization_capability": "engineered_to_order",
+          "supply_resilience": "stable",
+          "compliance_readiness": "qualified",
+          "service_level_commitment": "managed",
+          "inventory_buffer_policy": "balanced",
+          "negotiation_rigidity": "low"
+        },
+        "partnership_preferences": {
+          "contract_horizon_preference": "mid_term",
+          "volume_commitment_requirement": "low",
+          "payment_term_flexibility": "high",
+          "exclusivity_willingness": "medium",
+          "partnership_selectivity": "screened",
+          "onboarding_speed": "fast"
+        },
+        "contextual_identity": {
+          "market_identity": "Webflow Partners",
+          "supplier_type": "Specialized Service Provider",
+          "supplied_capability": "AI-driven UI/UX design tools; Customizable website templates",
+          "dependency_role": "Content Management System (CMS) provider",
+          "integration_scope": "API-based interface for streamlined website updates",
+          "commercial_context": "AI-powered website design platform for SMBs",
+          "supply_relevance": "High-demand, low-lead-time service"
+        }
+      },
+      {
+        "agent_id": "supplier_000002",
+        "role": "supplier",
+        "archetype_id": "scale_efficient_standardized_supplier",
+        "archetype_name": "Scale-Efficient Standardized Supplier",
+        "supply_profile": {
+          "supplier_type": "contract_manufacturer",
+          "production_scale": "high_volume",
+          "geographic_coverage": "multi_country",
+          "capacity_flexibility": "medium",
+          "quality_system_maturity": "standardized",
+          "lead_time_reliability": "high",
+          "cost_position": "low_cost",
+          "bargaining_power": "medium"
+        },
+        "commercial_capabilities": {
+          "pricing_discipline": "balanced",
+          "customization_capability": "standard_only",
+          "supply_resilience": "stable",
+          "compliance_readiness": "qualified",
+          "service_level_commitment": "managed",
+          "inventory_buffer_policy": "lean",
+          "negotiation_rigidity": "medium"
+        },
+        "partnership_preferences": {
+          "contract_horizon_preference": "long_term",
+          "volume_commitment_requirement": "high",
+          "payment_term_flexibility": "medium",
+          "exclusivity_willingness": "low",
+          "partnership_selectivity": "screened",
+          "onboarding_speed": "deliberate"
+        },
+        "contextual_identity": {
+          "market_identity": "DigiCraft Solutions",
+          "supplier_type": "contract manufacturer",
+          "supplied_capability": "custom website templates with AI-driven design suggestions",
+          "dependency_role": "enabling partner",
+          "integration_scope": "website design; AI-powered tools",
+          "commercial_context": "web development services",
+          "supply_relevance": "strategic partnership"
+        }
+      },
+      {
+        "agent_id": "supplier_000003",
+        "role": "supplier",
+        "archetype_id": "reliable_compliance_heavy_supplier",
+        "archetype_name": "Reliable Compliance-Heavy Supplier",
+        "supply_profile": {
+          "supplier_type": "logistics_fulfillment",
+          "production_scale": "mid_scale",
+          "geographic_coverage": "global",
+          "capacity_flexibility": "medium",
+          "quality_system_maturity": "advanced",
+          "lead_time_reliability": "high",
+          "cost_position": "competitive",
+          "bargaining_power": "medium"
+        },
+        "commercial_capabilities": {
+          "pricing_discipline": "firm",
+          "customization_capability": "configurable",
+          "supply_resilience": "redundant",
+          "compliance_readiness": "audit_ready",
+          "service_level_commitment": "mission_critical",
+          "inventory_buffer_policy": "buffer_heavy",
+          "negotiation_rigidity": "high"
+        },
+        "partnership_preferences": {
+          "contract_horizon_preference": "long_term",
+          "volume_commitment_requirement": "medium",
+          "payment_term_flexibility": "low",
+          "exclusivity_willingness": "medium",
+          "partnership_selectivity": "highly_selective",
+          "onboarding_speed": "slow"
+        },
+        "contextual_identity": {
+          "market_identity": "AI-poweredWebsite Studio",
+          "supplier_type": "software_enabling_supplier",
+          "supplied_capability": "responsive_web_design; AI-driven_layout_optimization",
+          "dependency_role": "website_design_platform_provider",
+          "integration_scope": "API_integration_with_website_builder_toolkit",
+          "commercial_context": "digital_solution_market",
+          "supply_relevance": "SMBs_with_e-commerce_goals; small_businesses_in_need_of_digital_transformation"
+        }
+      }
+    ],
+    "regulator": [
+      {
+        "agent_id": "regulator_000001",
+        "role": "regulator",
+        "archetype_id": "innovation_friendly_regulator",
+        "archetype_name": "Innovation-Friendly Regulator",
+        "regulatory_profile": {
+          "jurisdiction_level": "national",
+          "industry_scope": "digital_data_sensitive",
+          "policy_stability": "high",
+          "public_risk_focus": "medium",
+          "resource_capacity": "medium",
+          "rule_specificity": "principles_based",
+          "coordination_complexity": "medium",
+          "market_sensitivity": "high"
+        },
+        "oversight_posture": {
+          "review_strictness": "medium",
+          "audit_frequency": "medium",
+          "approval_speed": "deliberate",
+          "evidence_burden": "medium",
+          "remediation_tolerance": "high",
+          "escalation_propensity": "low",
+          "interpretive_flexibility": "high",
+          "innovation_tolerance": "high"
+        },
+        "review_priorities": {
+          "licensing_priority": "medium",
+          "consumer_protection_priority": "medium",
+          "competition_priority": "high",
+          "data_governance_priority": "high",
+          "environmental_priority": "low",
+          "cross_border_sensitivity": "medium"
+        }
+      },
+      {
+        "agent_id": "regulator_000002",
+        "role": "regulator",
+        "archetype_id": "risk_averse_strict_regulator",
+        "archetype_name": "Risk-Averse Strict Regulator",
+        "regulatory_profile": {
+          "jurisdiction_level": "national",
+          "industry_scope": "financial_health_sensitive",
+          "policy_stability": "high",
+          "public_risk_focus": "high",
+          "resource_capacity": "high",
+          "rule_specificity": "rules_based",
+          "coordination_complexity": "medium",
+          "market_sensitivity": "medium"
+        },
+        "oversight_posture": {
+          "review_strictness": "high",
+          "audit_frequency": "high",
+          "approval_speed": "slow",
+          "evidence_burden": "high",
+          "remediation_tolerance": "low",
+          "escalation_propensity": "high",
+          "interpretive_flexibility": "low",
+          "innovation_tolerance": "low"
+        },
+        "review_priorities": {
+          "licensing_priority": "high",
+          "consumer_protection_priority": "high",
+          "competition_priority": "medium",
+          "data_governance_priority": "high",
+          "environmental_priority": "low",
+          "cross_border_sensitivity": "medium"
+        }
+      },
+      {
+        "agent_id": "regulator_000003",
+        "role": "regulator",
+        "archetype_id": "cross_border_governance_regulator",
+        "archetype_name": "Cross-Border Governance Regulator",
+        "regulatory_profile": {
+          "jurisdiction_level": "supranational",
+          "industry_scope": "digital_data_sensitive",
+          "policy_stability": "medium",
+          "public_risk_focus": "medium",
+          "resource_capacity": "medium",
+          "rule_specificity": "hybrid",
+          "coordination_complexity": "high",
+          "market_sensitivity": "high"
+        },
+        "oversight_posture": {
+          "review_strictness": "high",
+          "audit_frequency": "medium",
+          "approval_speed": "slow",
+          "evidence_burden": "high",
+          "remediation_tolerance": "medium",
+          "escalation_propensity": "medium",
+          "interpretive_flexibility": "medium",
+          "innovation_tolerance": "medium"
+        },
+        "review_priorities": {
+          "licensing_priority": "high",
+          "consumer_protection_priority": "high",
+          "competition_priority": "high",
+          "data_governance_priority": "high",
+          "environmental_priority": "low",
+          "cross_border_sensitivity": "high"
+        }
+      }
+    ],
+    "technical_expert": [
+      {
+        "agent_id": "technical_expert_000001",
+        "role": "technical_expert",
+        "expertise_profile": {
+          "domain_specialization": "cybersecurity",
+          "architecture_orientation": "modular",
+          "experience_band": "senior",
+          "system_scale_familiarity": "business_critical",
+          "regulatory_exposure": "low",
+          "reliability_bias": "medium",
+          "tooling_depth": "specialist",
+          "innovation_bias": "forward_leaning"
+        },
+        "technical_capabilities": {
+          "feasibility_threshold": "medium",
+          "architecture_risk_sensitivity": "high",
+          "technical_debt_sensitivity": "medium",
+          "security_rigor": "medium",
+          "interoperability_focus": "medium",
+          "implementation_pragmatism": "medium",
+          "experimentation_willingness": "high",
+          "evidence_standard": "standard"
+        },
+        "assessment_style": {
+          "review_depth": "deep",
+          "time_to_opinion": "slow",
+          "documentation_expectation": "low",
+          "build_vs_buy_bias": "balanced",
+          "modernization_preference": "transformative",
+          "failure_mode_focus": "balanced"
+        },
+        "contextual_identity": {
+          "market_identity": "AI-Driven Web Solutions Specialist",
+          "expertise_domain": "AI-Powered Website Design",
+          "technical_scope": "Full-Stack Development with AI Integration",
+          "evaluation_lens": "Web Development Expertise",
+          "system_concern_focus": [
+            "Scalability",
+            "Security",
+            "Integration"
+          ],
+          "likely_recommendation_style": "Pragmatic yet Innovative",
+          "technical_relevance": "Cloud-Native, Modular Architecture"
+        }
+      }
+    ],
+    "mentor": [
+      {
+        "agent_id": "mentor_000001",
+        "role": "mentor",
+        "mentor_profile": {
+          "career_stage": "serial_founder",
+          "industry_lens": "fintech_healthcare",
+          "company_building_experience": "multi_cycle",
+          "network_reach": "regional",
+          "operator_vs_investor_background": "investor_heavy",
+          "growth_orientation": "steady",
+          "risk_outlook": "bold",
+          "international_exposure": "medium"
+        },
+        "advisory_style": {
+          "candor_level": "medium",
+          "intervention_intensity": "medium",
+          "decision_framework_rigor": "medium",
+          "experimentation_bias": "low",
+          "founder_autonomy_preference": "high",
+          "pattern_matching_strength": "low",
+          "feedback_speed": "fast",
+          "accountability_expectation": "medium"
+        },
+        "strategic_focus": {
+          "market_expansion_focus": "high",
+          "org_design_focus": "medium",
+          "capital_efficiency_focus": "medium",
+          "partnership_leverage_focus": "high",
+          "product_strategy_focus": "low",
+          "timing_sensitivity": "medium"
+        }
+      }
+    ]
+  }
+}

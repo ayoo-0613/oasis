@@ -30,6 +30,7 @@ __all__ = [
     "generate_investor_agents",
     "generate_supplier_agents",
     "generate_regulator_agents",
+    "run_business_simulation_pipeline",
     "generate_technical_expert_agents",
     "generate_mentor_agents",
     "load_archetype_config",
@@ -72,4 +73,7 @@ def __getattr__(name: str):
     if name == "generate_mentor_agents":
         from .roles.mentor.generate import generate_mentor_agents
         return generate_mentor_agents
+    if name == "run_business_simulation_pipeline":
+        from .run_pipeline import run_business_simulation_pipeline
+        return run_business_simulation_pipeline
     raise AttributeError(f"module {__name__!r} has no attribute {name!r}")
